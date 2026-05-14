@@ -805,7 +805,9 @@ const { useState, useEffect, useRef } = React;
 // ── N.Mammon contact info ──
 const PHONE_URL  = 'tel:+19177156245';
 const SMS_URL    = 'sms:+19177156245';
-const WA_URL     = 'https://wa.me/19177156245';
+const QUOTE_PREFILL = 'Hi, can you give me a quote for this?';
+const WA_URL     = 'https://wa.me/19177156245?text=' + encodeURIComponent(QUOTE_PREFILL);
+const SMS_QUOTE_URL = 'sms:+19177156245?body=' + encodeURIComponent(QUOTE_PREFILL);
 const MAPS_URL   = 'https://maps.google.com/?q=N.Mammon+Estate+Gold+and+Silver';
 const REVIEW_URL = 'https://www.google.com/maps/search/N+Mammon+Estate+Gold+%26+Silver+917-715-6245';
 const UPLOADER_HERO_IMG = 'assets/uploader-hero.png';
@@ -866,43 +868,6 @@ function PhotoUploader() {
   };
 
   const reset = () => { setPhotos([]); setStage('idle'); setProgress(0); };
-
-  const QUOTE_PREFILL = 'Hi, can you give me a quote for this?';
-  const WA_QUOTE_URL =
-    'https://wa.me/19177156245?text=' + encodeURIComponent(QUOTE_PREFILL);
-  const SMS_QUOTE_URL =
-    'sms:+19177156245?body=' + encodeURIComponent(QUOTE_PREFILL);
-
-  /** Data URL → File for Web Share API (wa.me cannot attach images). */
-  const dataUrlToFile = async (dataUrl, baseName) => {
-    const res = await fetch(dataUrl);
-    const blob = await res.blob();
-    const ext = (blob.type && blob.type.includes('png')) ? 'png' : 'jpg';
-    return new File([blob], `${baseName}.${ext}`, { type: blob.type || 'image/jpeg' });
-  };
-
-  const openWhatsAppTextOnly = () => {
-    window.open(WA_QUOTE_URL, '_blank', 'noopener,noreferrer');
-  };
-
-  const shareWhatsAppWithPhotos = async () => {
-    try {
-      const files = await Promise.all(
-        photos.map((p, i) => dataUrlToFile(p.src, `mammon-quote-${i + 1}`))
-      );
-      const sharePayload = {
-        text: QUOTE_PREFILL,
-        files,
-      };
-      if (navigator.share && navigator.canShare && navigator.canShare({ files })) {
-        await navigator.share(sharePayload);
-        return;
-      }
-    } catch (err) {
-      if (err && err.name === 'AbortError') return;
-    }
-    openWhatsAppTextOnly();
-  };
 
   if (stage === 'idle') return (
     <div className="cc-uploader"
@@ -965,7 +930,7 @@ function PhotoUploader() {
     </div>
   );
 
-  // ready — show thumbnails + WhatsApp send button
+  // ready — thumbnails + direct links (no system share sheet; wa.me cannot attach files)
   return (
     <div className="cc-uploader cc-uploader-review">
       <div className="cc-uploader-inner">
@@ -977,14 +942,14 @@ function PhotoUploader() {
           )}
         </div>
         <p className="cc-uploader-sub" style={{ marginTop: 4 }}>
-          <strong>WhatsApp:</strong> On iPhone and most Android phones, the green button opens the system share sheet with your photos — pick WhatsApp to send them with your message. On desktop or older browsers it opens WhatsApp with text only; use the attachment (+) in WhatsApp and choose the same photos from your library. <strong>Text / Messages</strong> uses SMS or iMessage — attach photos there the same way if you prefer.
+          We can’t put your photos into WhatsApp automatically from this page — only you can attach them in the app. Use <strong>Text</strong> first if you want to send pictures in one step (MMS / iMessage). Or tap <strong>Open WhatsApp</strong> to message us at our number (no contact saved needed), then use the paperclip to attach these photos from your library.
         </p>
         <div className="cc-review-actions">
-          <button type="button" className="cc-btn-primary" onClick={shareWhatsAppWithPhotos}>
-            {ICONS.whatsapp} Send on WhatsApp for a quote
-          </button>
-          <a className="cc-btn-secondary" href={SMS_QUOTE_URL}>
+          <a className="cc-btn-primary" href={SMS_QUOTE_URL}>
             {ICONS.text} Send via Messages or text
+          </a>
+          <a className="cc-btn-secondary" href={WA_URL} target="_blank" rel="noopener noreferrer">
+            {ICONS.whatsapp} Open WhatsApp (attach photos in chat)
           </a>
           <button className="cc-btn-ghost" onClick={reset}>Start over</button>
         </div>
