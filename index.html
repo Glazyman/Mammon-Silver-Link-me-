@@ -172,12 +172,27 @@ body.theme-daylight { background: #f0ede6; }
   padding: 8px 6px 4px;
 }
 .cc-monogram {
-  width: 76px; height: 76px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
+  overflow: hidden;
   position: relative;
-  filter: drop-shadow(0 4px 16px color-mix(in oklab, var(--accent) 40%, transparent));
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 4px;
+  background: #0a0907;
+  border: 1px solid var(--border-2);
+  box-shadow: none;
 }
-.cc-monogram svg { width: 100%; height: 100%; display: block; }
+.cc-monogram-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+  box-sizing: border-box;
+}
 .cc-headline {
   font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 400;
@@ -750,18 +765,7 @@ function CardHeader() {
   return (
     <header className="cc-head">
       <div className="cc-monogram" aria-hidden="true">
-        <svg viewBox="0 0 64 64">
-          <defs>
-            <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="var(--mg-1)" />
-              <stop offset=".5" stopColor="var(--mg-2)" />
-              <stop offset="1" stopColor="var(--mg-3)" />
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="31" fill="url(#mg)" />
-          <circle cx="32" cy="32" r="30.5" fill="none" stroke="var(--mg-stroke)" strokeWidth="0.8" />
-          <text x="32" y="37" textAnchor="middle" fontFamily="'Instrument Serif', serif" fontSize="22" fill="var(--mg-text)" fontWeight="400" letterSpacing="1">NM</text>
-        </svg>
+        <img className="cc-monogram-logo" src="assets/n-mammon-logo.png" alt="N. Mammon Estate Gold and Silver" width="76" height="76" decoding="async" />
       </div>
       <h1 className="cc-headline">Estate <em>Gold &amp; Silver</em></h1>
       <p className="cc-brand">N. Mammon</p>
