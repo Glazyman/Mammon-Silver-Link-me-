@@ -199,16 +199,18 @@ body.theme-daylight { background: #f0ede6; }
   font-size: 34px;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  margin: 4px 0 0;
+  margin: 8px 0 0;
 }
 .cc-headline em { font-style: italic; color: var(--accent); }
 .cc-brand {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 400;
-  color: var(--ink-3);
-  margin: 0;
-  letter-spacing: 0.03em;
+  font-style: italic;
+  color: var(--accent);
+  margin: 4px 0 0;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
 }
 .cc-tagline { font-size: 13px; color: var(--ink-2); margin: 0; letter-spacing: 0.005em; }
 .cc-rating {
@@ -547,12 +549,30 @@ body.theme-daylight { background: #f0ede6; }
   font-variant-numeric: tabular-nums;
 }
 .cc-foot-hours li span:last-child { color: var(--ink); font-weight: 500; }
+.cc-foot-hours li span:last-child .cc-foot-appt {
+  color: var(--ink-3);
+  font-weight: 400;
+}
 .cc-foot-fine {
   font-size: 11px;
   line-height: 1.55;
   color: var(--ink-3);
   font-family: 'Geist Mono', ui-monospace, monospace;
   letter-spacing: 0.005em;
+  text-align: center;
+  max-width: 100%;
+}
+.cc-foot-fine-lead {
+  display: block;
+  margin: 0;
+}
+.cc-foot-fine-house {
+  display: block;
+  margin: 8px 0 0;
+  font-weight: 700;
+  color: var(--ink-2);
+  font-family: inherit;
+  letter-spacing: 0.02em;
 }
 .cc-foot-theme {
   display: flex;
@@ -767,8 +787,8 @@ function CardHeader() {
       <div className="cc-monogram" aria-hidden="true">
         <img className="cc-monogram-logo" src="assets/n-mammon-logo.png" alt="N. Mammon Estate Gold and Silver" width="76" height="76" decoding="async" />
       </div>
-      <h1 className="cc-headline">Estate <em>Gold &amp; Silver</em></h1>
       <p className="cc-brand">N. Mammon</p>
+      <h1 className="cc-headline">Estate <em>Gold &amp; Silver</em></h1>
       <p className="cc-tagline">Honest · Professional · Local</p>
       <div className="cc-rating">
         <span className="cc-stars">{[0,1,2,3,4].map(i => <span key={i} className="cc-star">{ICONS.star}</span>)}</span>
@@ -804,12 +824,19 @@ function FootBlock({ theme, onThemeChange }) {
       <div className="cc-foot-hours">
         <div className="cc-foot-hours-title">Shop hours</div>
         <ul>
-          <li><span>Sunday</span><span>By appointment only</span></li>
-          <li><span>Mon – Fri</span><span>8:00 — 6:00</span></li>
+          <li>
+            <span>Sunday</span>
+            <span>9:00 — 5:00 <span className="cc-foot-appt">(By appointment only)</span></span>
+          </li>
+          <li>
+            <span>Mon – Fri</span>
+            <span>8:00 — 6:00 <span className="cc-foot-appt">(By appointment only)</span></span>
+          </li>
         </ul>
       </div>
       <div className="cc-foot-fine">
-        N.Mammon Estate Gold &amp; Silver — Turn your unwanted items into cash today.
+        <span className="cc-foot-fine-lead">N.Mammon Estate Gold &amp; Silver — Turn your unwanted items into cash today.</span>
+        <strong className="cc-foot-fine-house">We do house calls.</strong>
       </div>
       <div className="cc-foot-theme">
         <button className={`cc-theme-btn ${theme === 'vault' ? 'active' : ''}`} onClick={() => onThemeChange('vault')} title="Dark theme">
