@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>N.Mammon — Estate Gold &amp; Silver</title>
+<title>Estate Gold &amp; Silver — N. Mammon</title>
 <meta name="description" content="Get top value for your gold, silver, coins, jewelry and estate items. Call or text 917-715-6245 for a same-day cash offer. Honest. Professional. Local." />
-<meta property="og:title" content="N.Mammon — Estate Gold &amp; Silver" />
+<meta property="og:title" content="Estate Gold &amp; Silver — N. Mammon" />
 <meta property="og:description" content="We buy gold, silver, coins, jewelry &amp; estate items. Same-day cash offers. Call 917-715-6245." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,15 +178,23 @@ body.theme-daylight { background: #f0ede6; }
   filter: drop-shadow(0 4px 16px color-mix(in oklab, var(--accent) 40%, transparent));
 }
 .cc-monogram svg { width: 100%; height: 100%; display: block; }
-.cc-name {
+.cc-headline {
   font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 400;
-  font-size: 38px;
-  line-height: 1;
-  letter-spacing: -0.015em;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin: 4px 0 0;
 }
-.cc-name em { font-style: italic; color: var(--accent); }
+.cc-headline em { font-style: italic; color: var(--accent); }
+.cc-brand {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-3);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
 .cc-tagline { font-size: 13px; color: var(--ink-2); margin: 0; letter-spacing: 0.005em; }
 .cc-rating {
   display: inline-flex;
@@ -755,8 +763,9 @@ function CardHeader() {
           <text x="32" y="37" textAnchor="middle" fontFamily="'Instrument Serif', serif" fontSize="22" fill="var(--mg-text)" fontWeight="400" letterSpacing="1">NM</text>
         </svg>
       </div>
-      <h1 className="cc-name">N.<em>Mammon</em></h1>
-      <p className="cc-tagline">Estate Gold &amp; Silver · Honest · Professional · Local</p>
+      <h1 className="cc-headline">Estate <em>Gold &amp; Silver</em></h1>
+      <p className="cc-brand">N. Mammon</p>
+      <p className="cc-tagline">Honest · Professional · Local</p>
       <div className="cc-rating">
         <span className="cc-stars">{[0,1,2,3,4].map(i => <span key={i} className="cc-star">{ICONS.star}</span>)}</span>
         <span className="cc-rating-num">5.0</span>
@@ -791,13 +800,12 @@ function FootBlock({ theme, onThemeChange }) {
       <div className="cc-foot-hours">
         <div className="cc-foot-hours-title">Shop hours</div>
         <ul>
-          <li><span>Mon – Fri</span><span>9:00 — 6:00</span></li>
-          <li><span>Saturday</span><span>10:00 — 4:00</span></li>
-          <li><span>Sunday</span><span>By appointment</span></li>
+          <li><span>Sunday</span><span>By appointment only</span></li>
+          <li><span>Mon – Fri</span><span>8:00 — 6:00</span></li>
         </ul>
       </div>
       <div className="cc-foot-fine">
-        N.Mammon Estate Gold &amp; Silver — Turn your unwanted items into cash today. State ID required for transactions over $200.
+        N.Mammon Estate Gold &amp; Silver — Turn your unwanted items into cash today.
       </div>
       <div className="cc-foot-theme">
         <button className={`cc-theme-btn ${theme === 'vault' ? 'active' : ''}`} onClick={() => onThemeChange('vault')} title="Dark theme">
