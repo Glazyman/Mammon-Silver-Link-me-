@@ -261,8 +261,26 @@ body.theme-daylight { background: #f0ede6; }
   pointer-events: none;
   opacity: 0.55;
 }
+.cc-uploader-hero {
+  margin: -22px -22px 16px;
+  position: relative;
+  z-index: 0;
+  aspect-ratio: 16 / 9;
+  max-height: min(42vw, 240px);
+  min-height: 120px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.cc-uploader-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
 .cc-uploader-inner {
   position: relative;
+  z-index: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -665,6 +683,8 @@ const SMS_URL    = 'sms:+19177156245';
 const WA_URL     = 'https://wa.me/19177156245';
 const MAPS_URL   = 'https://maps.google.com/?q=N.Mammon+Estate+Gold+and+Silver';
 const REVIEW_URL = 'https://www.google.com/maps/search/N+Mammon+Estate+Gold+%26+Silver+917-715-6245';
+const UPLOADER_HERO_IMG =
+  'https://images.unsplash.com/photo-1632113988284-31334b398e10?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 // ── Icons ──
 const ICONS = {
@@ -739,6 +759,16 @@ function PhotoUploader() {
       onKeyDown={e => e.key === 'Enter' && fileRef.current?.click()}
     >
       <div className="cc-uploader-glow" aria-hidden="true"></div>
+      <figure className="cc-uploader-hero">
+        <img
+          src={UPLOADER_HERO_IMG}
+          alt="Gold and precious metals"
+          width="1200"
+          height="675"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
       <div className="cc-uploader-inner">
         <div className="cc-uploader-icon">{ICONS.camera}</div>
         <div className="cc-uploader-eyebrow">Get a quote</div>
