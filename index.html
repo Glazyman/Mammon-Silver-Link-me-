@@ -392,10 +392,12 @@ body.theme-daylight { background: #f0ede6; }
   font-size: 15px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: transform .15s, filter .15s;
 }
 .cc-btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
 .cc-btn-primary svg { width: 16px; height: 16px; }
+.cc-btn-primary path { fill: #16120a; }
 .cc-btn-ghost {
   background: transparent;
   border: 1px solid var(--border-2);
@@ -598,7 +600,7 @@ const PHONE_URL  = 'tel:+19177156245';
 const SMS_URL    = 'sms:+19177156245';
 const WA_URL     = 'https://wa.me/19177156245';
 const MAPS_URL   = 'https://maps.google.com/?q=N.Mammon+Estate+Gold+and+Silver';
-const REVIEW_URL = 'https://g.page/r/REPLACE_WITH_REAL_REVIEW_URL/review';
+const REVIEW_URL = 'https://www.google.com/search?q=N+Mammon+Estate+Gold+%26+Silver+917-715-6245#lrd=,1,,,,';
 
 // ── Icons ──
 const ICONS = {
@@ -642,7 +644,7 @@ function PhotoUploader() {
         p += Math.random() * 22 + 8;
         if (p >= 100) {
           p = 100; clearInterval(t);
-          setTimeout(() => setStage('review'), 300);
+          setTimeout(() => setStage('ready'), 300);
         }
         setProgress(p);
       }, 180);
@@ -657,8 +659,7 @@ function PhotoUploader() {
 
   const reset = () => { setPhotos([]); setStage('idle'); setProgress(0); };
 
-  const lo = 480 + photos.length * 35;
-  const hi = lo + 220 + photos.length * 30;
+  const WA_QUOTE_URL = 'https://wa.me/19177156245?text=Hi%2C%20can%20you%20give%20me%20a%20quote%20for%20this%3F';
 
   if (stage === 'idle') return (
     <div className="cc-uploader"
@@ -672,15 +673,15 @@ function PhotoUploader() {
       <div className="cc-uploader-glow" aria-hidden="true"></div>
       <div className="cc-uploader-inner">
         <div className="cc-uploader-icon">{ICONS.camera}</div>
-        <div className="cc-uploader-eyebrow">Free instant estimate</div>
+        <div className="cc-uploader-eyebrow">Get a quote</div>
         <h3 className="cc-uploader-title">Snap your items,<br />get a cash offer today.</h3>
-        <p className="cc-uploader-sub">Gold, silver, coins, jewelry, estate items — send a few photos and we'll reply with a real cash offer. No obligation, no pressure.</p>
+        <p className="cc-uploader-sub">Gold, silver, coins, jewelry, estate items — upload your photos and we'll send you a WhatsApp quote. No obligation, no pressure.</p>
         <div className="cc-uploader-cta">
           <span className="cc-uploader-btn">{ICONS.upload} Upload photos</span>
           <span className="cc-uploader-or">or drag &amp; drop</span>
         </div>
         <div className="cc-uploader-meta">
-          <span>{ICONS.shield} Insured &amp; bonded</span>
+          <span>{ICONS.shield} Honest &amp; professional</span>
           <span>·</span>
           <span>{ICONS.clock} Reply in &lt;1 hr, 7 days</span>
         </div>
@@ -704,45 +705,33 @@ function PhotoUploader() {
           </svg>
           <span>{Math.round(progress)}%</span>
         </div>
-        <h3 className="cc-uploader-title">Analyzing photos</h3>
-        <p className="cc-uploader-sub">Reading hallmarks, assessing weight, cross-checking today's gold &amp; silver spot prices…</p>
+        <h3 className="cc-uploader-title">Preparing your photos…</h3>
+        <p className="cc-uploader-sub">Almost ready to send.</p>
       </div>
     </div>
   );
 
-  if (stage === 'review') return (
+  // ready — show thumbnails + WhatsApp send button
+  return (
     <div className="cc-uploader cc-uploader-review">
       <div className="cc-uploader-inner">
-        <div className="cc-review-eyebrow"><span className="cc-dot"></span> Preliminary estimate</div>
-        <div className="cc-estimate">
-          <span className="cc-estimate-currency">$</span>
-          <span className="cc-estimate-lo">{lo.toLocaleString()}</span>
-          <span className="cc-estimate-dash">–</span>
-          <span className="cc-estimate-hi">${hi.toLocaleString()}</span>
-        </div>
-        <p className="cc-uploader-sub">
-          Range based on {photos.length} photo{photos.length === 1 ? '' : 's'} at today's spot. A locked offer follows once we see the pieces in person — bring them in or we'll come to you.
-        </p>
+        <div className="cc-review-eyebrow"><span className="cc-dot"></span> Photos ready to send</div>
         <div className="cc-thumbs">
           {photos.map(p => <div key={p.id} className="cc-thumb" style={{ backgroundImage: `url(${p.src})` }}></div>)}
-          {photos.length < 6 && <button className="cc-thumb cc-thumb-add" onClick={() => fileRef.current?.click()} aria-label="Add more">+</button>}
+          {photos.length < 6 && (
+            <button className="cc-thumb cc-thumb-add" onClick={e => { e.stopPropagation(); fileRef.current?.click(); }} aria-label="Add more">+</button>
+          )}
         </div>
+        <p className="cc-uploader-sub" style={{ marginTop: 4 }}>
+          Tap below to open WhatsApp — then attach these photos and send for your quote.
+        </p>
         <div className="cc-review-actions">
-          <button className="cc-btn-primary" onClick={() => setStage('sent')}>Send to dealer for firm offer {ICONS.arrow}</button>
+          <a className="cc-btn-primary" href={WA_QUOTE_URL} target="_blank" rel="noopener noreferrer">
+            {ICONS.whatsapp} Send on WhatsApp for a quote
+          </a>
           <button className="cc-btn-ghost" onClick={reset}>Start over</button>
         </div>
         <input ref={fileRef} type="file" accept="image/*" multiple style={{ display:'none' }} onChange={e => addFiles(e.target.files)} />
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="cc-uploader cc-uploader-sent">
-      <div className="cc-uploader-inner">
-        <div className="cc-sent-check">{ICONS.check}</div>
-        <h3 className="cc-uploader-title">Sent! We'll be in touch.</h3>
-        <p className="cc-uploader-sub">You'll hear back within the hour. Or call us now at 917-715-6245 — we pick up 7 days a week.</p>
-        <button className="cc-btn-ghost" onClick={reset}>Submit another batch</button>
       </div>
     </div>
   );
@@ -842,8 +831,7 @@ function App() {
     { icon: ICONS.text,        label: 'Text Us',                sub: 'Quick quote — reply usually under 10 min', accent: 'sky',  href: SMS_URL },
     { icon: ICONS.whatsapp,    label: 'WhatsApp',               sub: 'Send photos &amp; chat live',              accent: 'leaf', href: WA_URL,  badge: 'Fastest' },
     { icon: ICONS.map,         label: 'Find Us',                sub: 'Get directions to our location',           accent: 'rose', href: MAPS_URL },
-    { icon: ICONS.starOutline, label: 'Leave a Google Review',  sub: 'Your review means everything to us',       accent: 'gold', href: REVIEW_URL,
-      onClick: e => { if (REVIEW_URL.includes('REPLACE')) { e.preventDefault(); showToast('Google Reviews link coming soon'); } } },
+    { icon: ICONS.starOutline, label: 'Leave a Google Review',  sub: 'Your review means everything to us',       accent: 'gold', href: REVIEW_URL },
   ];
 
   return (
