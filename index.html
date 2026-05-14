@@ -108,107 +108,49 @@ body.theme-daylight { background: #f1ece1; }
   --shine: linear-gradient(135deg, rgba(138,108,58,0.08), rgba(138,108,58,0) 60%);
 }
 
-/* ── Mobile shell ── */
-.cc-mobile {
+/* ── Page shell (single-column, all screen sizes) ── */
+.cc-page {
   position: relative;
   min-height: 100svh;
   background: var(--bg);
-  overflow: hidden;
+  overflow-x: hidden;
 }
-.cc-mobile-bg {
+.cc-page-bg {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
 }
-.cc-variant-vault .cc-mobile-bg {
+.cc-variant-vault .cc-page-bg {
   background:
     radial-gradient(140% 70% at 50% -10%, rgba(214,178,114,0.18), transparent 60%),
     radial-gradient(80% 40% at 100% 100%, rgba(214,178,114,0.10), transparent 60%),
     linear-gradient(180deg, #16140f 0%, #100f0a 100%);
 }
-.cc-variant-daylight .cc-mobile-bg {
+.cc-variant-daylight .cc-page-bg {
   background:
     radial-gradient(140% 60% at 50% -20%, rgba(255,246,220,0.9), transparent 65%),
     radial-gradient(80% 50% at 100% 110%, rgba(214,178,114,0.18), transparent 60%),
     linear-gradient(180deg, #f1ece1 0%, #ebe2cf 100%);
 }
-.cc-mobile-bg-grain {
+.cc-page-grain {
   position: absolute; inset: 0;
   background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.012) 2px 3px);
   mix-blend-mode: overlay;
   opacity: 0.6;
 }
-.cc-mobile-scroll {
+.cc-card {
   position: relative;
   z-index: 1;
-  padding: 72px 18px 40px;
+  padding: 56px 18px 48px;
   display: flex;
   flex-direction: column;
   gap: 22px;
   max-width: 480px;
   margin: 0 auto;
 }
-.cc-mobile-scroll > * { flex: 0 0 auto; min-height: max-content; }
+.cc-card > * { flex: 0 0 auto; min-height: max-content; }
 
-/* ── Desktop shell ── */
-@media (min-width: 800px) {
-  .cc-root {
-    height: 100svh;
-    overflow: hidden;
-  }
-  .cc-mobile { display: none; }
-  .cc-desktop-show { display: grid !important; }
-}
-.cc-desktop {
-  display: none;
-  position: absolute;
-  inset: 0;
-  grid-template-columns: 1.15fr 1fr;
-  background: var(--bg);
-}
-.cc-desktop-side {
-  position: relative;
-  padding: 56px 64px 56px 72px;
-  overflow: hidden;
-}
-.cc-desktop-side-bg {
-  position: absolute; inset: 0;
-  pointer-events: none;
-}
-.cc-variant-vault .cc-desktop-side-bg {
-  background:
-    radial-gradient(60% 50% at 20% 0%, rgba(214,178,114,0.20), transparent 60%),
-    radial-gradient(60% 40% at 110% 100%, rgba(214,178,114,0.10), transparent 60%),
-    linear-gradient(170deg, #1c190f 0%, #0e0c08 100%);
-}
-.cc-variant-daylight .cc-desktop-side-bg {
-  background:
-    radial-gradient(60% 50% at 20% 0%, rgba(255,246,220,0.85), transparent 60%),
-    linear-gradient(170deg, #ece4d1 0%, #ddd1b6 100%);
-}
-.cc-desktop-side-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  height: 100%;
-}
-.cc-desktop-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--ink-2);
-  font-weight: 500;
-  width: max-content;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border-2);
-  background: var(--surface);
-}
 .cc-dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--good);
@@ -219,112 +161,6 @@ body.theme-daylight { background: #f1ece1; }
   0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--good) 50%, transparent); }
   50%       { box-shadow: 0 0 0 6px color-mix(in oklab, var(--good) 0%, transparent); }
 }
-.cc-desktop-headline {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(40px, 4.6vw, 78px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  margin: 6px 0 0;
-  color: var(--ink);
-  text-wrap: balance;
-}
-.cc-desktop-headline em { font-style: italic; color: var(--accent); }
-.cc-desktop-lede {
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--ink-2);
-  max-width: 46ch;
-  margin: 0;
-}
-.cc-stats {
-  display: flex;
-  align-items: stretch;
-  gap: 20px;
-  padding: 22px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.cc-stat-div { width: 1px; background: var(--border); }
-.cc-stat-num {
-  font-family: 'Instrument Serif', serif;
-  font-size: 44px;
-  line-height: 1;
-  color: var(--ink);
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-.cc-stat-num span { font-size: 18px; color: var(--accent); margin-left: 3px; }
-.cc-stat-lbl {
-  margin-top: 6px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-3);
-}
-.cc-desktop-fig {
-  margin: auto 0 0;
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 16px;
-  align-items: center;
-}
-.cc-fig-frame {
-  width: 88px; height: 88px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border-2);
-  background: var(--surface-2);
-}
-.cc-fig-placeholder {
-  width: 100%; height: 100%;
-  background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(214,178,114,0.18) 5px 6px);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Geist Mono', ui-monospace, monospace;
-  font-size: 7px;
-  text-align: center;
-  color: var(--ink-3);
-  padding: 6px;
-  letter-spacing: 0.05em;
-}
-.cc-fig-name {
-  display: block;
-  font-family: 'Instrument Serif', serif;
-  font-size: 22px;
-  color: var(--ink);
-  font-style: italic;
-}
-.cc-fig-role {
-  display: block;
-  font-size: 13px;
-  color: var(--ink-2);
-  line-height: 1.45;
-  margin-top: 2px;
-}
-.cc-desktop-main {
-  position: relative;
-  padding: 40px;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-}
-.cc-desktop-card {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  overflow-y: auto;
-  max-height: 100%;
-  padding: 12px 4px;
-}
-.cc-desktop-card > * { flex: 0 0 auto; min-height: max-content; }
-.cc-desktop-card::-webkit-scrollbar { display: none; }
-.cc-desktop-card { scrollbar-width: none; }
 
 /* ── Header ── */
 .cc-head {
@@ -750,9 +586,9 @@ body.theme-daylight { background: #f1ece1; }
 <body class="theme-vault">
 <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-E9zfnRxKXtM+Yqe9RrVgE0YFh3L+G9z6Yn/x6tLUbYB3Kj8rP2I5E1V4Y0bP9Lk" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-7hs3HtB2R5UGhiVW8u6iE5ZDsKQMpBNUj2t6nOw9V4gYbKbKhZl4N7U9H4TZFSL" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
 
 <script type="text/babel">
 const { useState, useEffect, useRef } = React;
@@ -997,19 +833,11 @@ function FootBlock({ theme, onThemeChange }) {
 // ── Main App ──
 function App() {
   const [theme, setTheme] = useState('vault');
-  const [layout, setLayout] = useState(window.innerWidth >= 800 ? 'desktop' : 'mobile');
   const [toast, setToast] = useState(null);
 
   useEffect(() => {
     document.body.className = `theme-${theme}`;
   }, [theme]);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 800px)');
-    const handler = e => setLayout(e.matches ? 'desktop' : 'mobile');
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
 
   const showToast = (msg) => {
     setToast(msg);
@@ -1018,86 +846,29 @@ function App() {
   };
 
   const links = [
-    { icon: ICONS.phone,      label: 'Call us',                    sub: '(503) 555-0182 · Marcus, owner', accent: 'gold', href: PHONE_URL },
-    { icon: ICONS.text,       label: 'Text for a quick quote',      sub: 'Replies usually under 10 min',   accent: 'sky',  href: SMS_URL },
-    { icon: ICONS.whatsapp,   label: 'WhatsApp',                   sub: 'Send photos & chat live',         accent: 'leaf', href: WA_URL,     badge: 'Fastest' },
-    { icon: ICONS.map,        label: 'Directions to the shop',     sub: '2418 NW Quimby St · 0.5mi free parking', accent: 'rose', href: MAPS_URL },
-    { icon: ICONS.starOutline, label: 'Leave a Google review',     sub: 'It really helps the family business', accent: 'gold', href: REVIEW_URL, onClick: e => { if (REVIEW_URL.includes('REPLACE')) { e.preventDefault(); showToast('Google Reviews link coming soon'); } } },
+    { icon: ICONS.phone,       label: 'Call us',                sub: '(503) 555-0182 · Marcus, owner',        accent: 'gold', href: PHONE_URL },
+    { icon: ICONS.text,        label: 'Text for a quick quote', sub: 'Replies usually under 10 min',           accent: 'sky',  href: SMS_URL },
+    { icon: ICONS.whatsapp,    label: 'WhatsApp',               sub: 'Send photos & chat live',                accent: 'leaf', href: WA_URL,  badge: 'Fastest' },
+    { icon: ICONS.map,         label: 'Directions to the shop', sub: '2418 NW Quimby St · 0.5mi free parking',accent: 'rose', href: MAPS_URL },
+    { icon: ICONS.starOutline, label: 'Leave a Google review',  sub: 'It really helps the family business',    accent: 'gold', href: REVIEW_URL,
+      onClick: e => { if (REVIEW_URL.includes('REPLACE')) { e.preventDefault(); showToast('Google Reviews link coming soon'); } } },
   ];
-
-  const cardContent = (
-    <>
-      <CardHeader />
-      <PhotoUploader />
-      <div className="cc-links">
-        {links.map((l, i) => <LinkRow key={i} {...l} />)}
-      </div>
-      <FootBlock theme={theme} onThemeChange={setTheme} />
-    </>
-  );
 
   return (
     <div className={`cc-root cc-variant-${theme}`}>
-      {/* Mobile layout */}
-      {layout === 'mobile' && (
-        <div className="cc-mobile">
-          <div className="cc-mobile-bg" aria-hidden="true">
-            <div className="cc-mobile-bg-grain"></div>
+      <div className="cc-page">
+        <div className="cc-page-bg" aria-hidden="true">
+          <div className="cc-page-grain"></div>
+        </div>
+        <div className="cc-card">
+          <CardHeader />
+          <PhotoUploader />
+          <div className="cc-links">
+            {links.map((l, i) => <LinkRow key={i} {...l} />)}
           </div>
-          <div className="cc-mobile-scroll">{cardContent}</div>
+          <FootBlock theme={theme} onThemeChange={setTheme} />
         </div>
-      )}
-
-      {/* Desktop layout */}
-      {layout === 'desktop' && (
-        <div className="cc-desktop cc-desktop-show">
-          <aside className="cc-desktop-side">
-            <div className="cc-desktop-side-bg" aria-hidden="true"></div>
-            <div className="cc-desktop-side-inner">
-              <div className="cc-desktop-eyebrow">
-                <span className="cc-dot cc-dot-live"></span>
-                Open now · until 6:00 PM
-              </div>
-              <h2 className="cc-desktop-headline">We pay <em>honest</em> prices<br />for the silver in<br />your top drawer.</h2>
-              <p className="cc-desktop-lede">
-                Flatware, tea sets, coins, scrap, hollowware, sterling jewelry. Bring it in or text photos — we'll quote it the same day, pay you in cash, and you'll know exactly how we got the number.
-              </p>
-              <div className="cc-stats">
-                <div className="cc-stat">
-                  <div className="cc-stat-num">39<span>yrs</span></div>
-                  <div className="cc-stat-lbl">Buying silver in PDX</div>
-                </div>
-                <div className="cc-stat-div"></div>
-                <div className="cc-stat">
-                  <div className="cc-stat-num">$34.21</div>
-                  <div className="cc-stat-lbl">Today's spot, per troy oz</div>
-                </div>
-                <div className="cc-stat-div"></div>
-                <div className="cc-stat">
-                  <div className="cc-stat-num">94<span>%</span></div>
-                  <div className="cc-stat-lbl">Of spot we pay on sterling</div>
-                </div>
-              </div>
-              <figure className="cc-desktop-fig">
-                <div className="cc-fig-frame">
-                  <div className="cc-fig-placeholder"><span>SHOP PHOTO · 2418 NW QUIMBY ST</span></div>
-                </div>
-                <figcaption>
-                  <span className="cc-fig-name">Marcus Halverson</span>
-                  <span className="cc-fig-role">Third-generation buyer. He'll be the one weighing your pieces.</span>
-                </figcaption>
-              </figure>
-            </div>
-          </aside>
-          <main className="cc-desktop-main">
-            <div className="cc-mobile-bg" aria-hidden="true">
-              <div className="cc-mobile-bg-grain"></div>
-            </div>
-            <div className="cc-desktop-card">{cardContent}</div>
-          </main>
-        </div>
-      )}
-
+      </div>
       {toast && <div className="cc-toast" role="status">{toast}</div>}
     </div>
   );
