@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Halverson &amp; Co. — Contact Card</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+/>
+
+<link rel="stylesheet" href="contact-card.css" />
+
+<style>
+  html, body {
+    margin: 0;
+    background: #f0eee9;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: #1f1a12;
+  }
+  /* Frame chrome shared by the artboards */
+  .frame-mobile {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 38px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25), 0 0 0 8px #1c1a16, 0 0 0 9px rgba(0,0,0,0.15);
+  }
+  .frame-mobile::after {
+    content: '';
+    position: absolute;
+    top: 12px; left: 50%; transform: translateX(-50%);
+    width: 110px; height: 28px;
+    background: #000;
+    border-radius: 0 0 18px 18px;
+    z-index: 50;
+  }
+  .frame-desktop {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f0d0a;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.35);
+  }
+  .frame-desktop-chrome {
+    height: 36px;
+    background: #1b1814;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center;
+    padding: 0 14px;
+    gap: 6px;
+    position: relative;
+    z-index: 5;
+  }
+  .frame-desktop[data-theme="daylight"] .frame-desktop-chrome {
+    background: #e5dcc6;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .frame-dot { width: 11px; height: 11px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+  .frame-desktop[data-theme="daylight"] .frame-dot { background: rgba(0,0,0,0.18); }
+  .frame-dot.r { background: #ff5f57; }
+  .frame-dot.y { background: #febc2e; }
+  .frame-dot.g { background: #28c840; }
+  .frame-desktop-url {
+    margin-left: 90px;
+    background: rgba(0,0,0,0.25);
+    color: rgba(255,255,255,0.7);
+    font-size: 11.5px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    letter-spacing: 0.02em;
+  }
+  .frame-desktop[data-theme="daylight"] .frame-desktop-url {
+    background: rgba(255,255,255,0.6);
+    color: rgba(0,0,0,0.6);
+  }
+  .frame-desktop-body {
+    position: absolute; inset: 36px 0 0 0;
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="contact-card.jsx"></script>
+
+<script type="text/babel">
+  const { DesignCanvas, DCSection, DCArtboard } = window;
+
+  // Mobile frame: just a phone bezel wrapper
+  function MobileFrame({ variant }) {
+    return (
+      <div className="frame-mobile">
+        <ContactCard variant={variant} layout="mobile" />
+      </div>
+    );
+  }
+  function DesktopFrame({ variant }) {
+    return (
+      <div className="frame-desktop" data-theme={variant}>
+        <div className="frame-desktop-chrome">
+          <div className="frame-dot r"></div>
+          <div className="frame-dot y"></div>
+          <div className="frame-dot g"></div>
+          <div className="frame-desktop-url">halverson.co/sell</div>
+        </div>
+        <div className="frame-desktop-body">
+          <ContactCard variant={variant} layout="desktop" />
+        </div>
+      </div>
+    );
+  }
+
+  function App() {
+    return (
+      <DesignCanvas
+        title="Halverson & Co. — Sell-Your-Silver Landing"
+        subtitle="Ad destination · link-in-bio · mobile-first, with desktop split-layout. Pick a theme."
+      >
+        <DCSection
+          id="vault"
+          title="A · Vault"
+          subtitle="Deep charcoal, brass accents, instrument-serif display. Reads premium, after-hours, jeweler-grade."
+        >
+          <DCArtboard id="vault-mobile" label="Mobile · 390×844" width={390} height={844}>
+            <MobileFrame variant="vault" />
+          </DCArtboard>
+          <DCArtboard id="vault-desktop" label="Desktop · 1280×800" width={1280} height={800}>
+            <DesktopFrame variant="vault" />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection
+          id="daylight"
+          title="B · Daylight"
+          subtitle="Warm paper, ink, brass. Reads honest small-town shop, friendlier for a first-touch ad click."
+        >
+          <DCArtboard id="day-mobile" label="Mobile · 390×844" width={390} height={844}>
+            <MobileFrame variant="daylight" />
+          </DCArtboard>
+          <DCArtboard id="day-desktop" label="Desktop · 1280×800" width={1280} height={800}>
+            <DesktopFrame variant="daylight" />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>

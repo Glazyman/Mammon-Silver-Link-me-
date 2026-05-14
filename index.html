@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Halverson &amp; Co. — Sell Your Silver</title>
+<meta name="description" content="Family silver buyer in Portland, OR. Get a cash offer for your silver flatware, coins, tea sets, and more. Call, text, or send photos for a same-day quote." />
+<meta property="og:title" content="Halverson &amp; Co. — Sell Your Silver" />
+<meta property="og:description" content="Family silver buyer · Est. 1987 · Portland, OR. Cash offers on all silver. Same-day quotes." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  min-height: 100%;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body.theme-vault    { background: #16140f; }
+body.theme-daylight { background: #f1ece1; }
+
+/* ── ContactCard root ── */
+.cc-root,
+.cc-root *,
+.cc-root *::before,
+.cc-root *::after { box-sizing: border-box; }
+.cc-root {
+  --cc-pad: 22px;
+  --cc-radius: 22px;
+  --cc-radius-sm: 14px;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-feature-settings: 'ss01','ss02','cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: var(--ink);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  width: 100%;
+  min-height: 100svh;
+  position: relative;
+}
+.cc-root button {
+  font-family: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Theme A · Vault ── */
+.cc-variant-vault {
+  --bg: #16140f;
+  --bg-2: #1e1b14;
+  --surface: rgba(255,248,232,0.04);
+  --surface-2: rgba(255,248,232,0.07);
+  --surface-hover: rgba(255,248,232,0.10);
+  --border: rgba(255,240,210,0.10);
+  --border-2: rgba(255,240,210,0.18);
+  --ink: #f3ead7;
+  --ink-2: rgba(243,234,215,0.78);
+  --ink-3: rgba(243,234,215,0.52);
+  --accent: #d6b272;
+  --accent-2: #f4dca0;
+  --accent-3: #8a6c3a;
+  --good: #9bc28a;
+  --gold: #d6b272;
+  --sky: #a9c4dc;
+  --leaf: #9bc28a;
+  --rose: #d9a9a3;
+  --shadow: 0 30px 60px -20px rgba(0,0,0,0.6), 0 8px 20px rgba(0,0,0,0.35);
+  --mg-1: #2a2418;
+  --mg-2: #4a3c20;
+  --mg-3: #d6b272;
+  --mg-stroke: rgba(214,178,114,0.6);
+  --mg-text: #f3ead7;
+  --shine: linear-gradient(135deg, rgba(214,178,114,0.18), rgba(214,178,114,0) 60%);
+}
+
+/* ── Theme B · Daylight ── */
+.cc-variant-daylight {
+  --bg: #f1ece1;
+  --bg-2: #e7dfcd;
+  --surface: #fbf7ec;
+  --surface-2: #fff;
+  --surface-hover: #fffbf0;
+  --border: rgba(40,28,16,0.10);
+  --border-2: rgba(40,28,16,0.20);
+  --ink: #1f1a12;
+  --ink-2: rgba(31,26,18,0.72);
+  --ink-3: rgba(31,26,18,0.48);
+  --accent: #8a6c3a;
+  --accent-2: #b0894c;
+  --accent-3: #5b4622;
+  --good: #4a7c3c;
+  --gold: #8a6c3a;
+  --sky: #426a8a;
+  --leaf: #4a7c3c;
+  --rose: #a3504a;
+  --shadow: 0 20px 50px -16px rgba(50,36,18,0.18), 0 4px 14px rgba(50,36,18,0.08);
+  --mg-1: #fbf7ec;
+  --mg-2: #e2d3b1;
+  --mg-3: #8a6c3a;
+  --mg-stroke: rgba(138,108,58,0.5);
+  --mg-text: #1f1a12;
+  --shine: linear-gradient(135deg, rgba(138,108,58,0.08), rgba(138,108,58,0) 60%);
+}
+
+/* ── Mobile shell ── */
+.cc-mobile {
+  position: relative;
+  min-height: 100svh;
+  background: var(--bg);
+  overflow: hidden;
+}
+.cc-mobile-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.cc-variant-vault .cc-mobile-bg {
+  background:
+    radial-gradient(140% 70% at 50% -10%, rgba(214,178,114,0.18), transparent 60%),
+    radial-gradient(80% 40% at 100% 100%, rgba(214,178,114,0.10), transparent 60%),
+    linear-gradient(180deg, #16140f 0%, #100f0a 100%);
+}
+.cc-variant-daylight .cc-mobile-bg {
+  background:
+    radial-gradient(140% 60% at 50% -20%, rgba(255,246,220,0.9), transparent 65%),
+    radial-gradient(80% 50% at 100% 110%, rgba(214,178,114,0.18), transparent 60%),
+    linear-gradient(180deg, #f1ece1 0%, #ebe2cf 100%);
+}
+.cc-mobile-bg-grain {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.012) 2px 3px);
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+.cc-mobile-scroll {
+  position: relative;
+  z-index: 1;
+  padding: 72px 18px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.cc-mobile-scroll > * { flex: 0 0 auto; min-height: max-content; }
+
+/* ── Desktop shell ── */
+@media (min-width: 800px) {
+  .cc-root {
+    height: 100svh;
+    overflow: hidden;
+  }
+  .cc-mobile { display: none; }
+  .cc-desktop-show { display: grid !important; }
+}
+.cc-desktop {
+  display: none;
+  position: absolute;
+  inset: 0;
+  grid-template-columns: 1.15fr 1fr;
+  background: var(--bg);
+}
+.cc-desktop-side {
+  position: relative;
+  padding: 56px 64px 56px 72px;
+  overflow: hidden;
+}
+.cc-desktop-side-bg {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.cc-variant-vault .cc-desktop-side-bg {
+  background:
+    radial-gradient(60% 50% at 20% 0%, rgba(214,178,114,0.20), transparent 60%),
+    radial-gradient(60% 40% at 110% 100%, rgba(214,178,114,0.10), transparent 60%),
+    linear-gradient(170deg, #1c190f 0%, #0e0c08 100%);
+}
+.cc-variant-daylight .cc-desktop-side-bg {
+  background:
+    radial-gradient(60% 50% at 20% 0%, rgba(255,246,220,0.85), transparent 60%),
+    linear-gradient(170deg, #ece4d1 0%, #ddd1b6 100%);
+}
+.cc-desktop-side-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  height: 100%;
+}
+.cc-desktop-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  font-weight: 500;
+  width: max-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-2);
+  background: var(--surface);
+}
+.cc-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--good);
+  display: inline-block;
+}
+.cc-dot-live { animation: cc-pulse 2s infinite ease-in-out; }
+@keyframes cc-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--good) 50%, transparent); }
+  50%       { box-shadow: 0 0 0 6px color-mix(in oklab, var(--good) 0%, transparent); }
+}
+.cc-desktop-headline {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(40px, 4.6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.cc-desktop-headline em { font-style: italic; color: var(--accent); }
+.cc-desktop-lede {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 46ch;
+  margin: 0;
+}
+.cc-stats {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.cc-stat-div { width: 1px; background: var(--border); }
+.cc-stat-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.cc-stat-num span { font-size: 18px; color: var(--accent); margin-left: 3px; }
+.cc-stat-lbl {
+  margin-top: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+.cc-desktop-fig {
+  margin: auto 0 0;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.cc-fig-frame {
+  width: 88px; height: 88px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  background: var(--surface-2);
+}
+.cc-fig-placeholder {
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(135deg, transparent 0 5px, rgba(214,178,114,0.18) 5px 6px);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 7px;
+  text-align: center;
+  color: var(--ink-3);
+  padding: 6px;
+  letter-spacing: 0.05em;
+}
+.cc-fig-name {
+  display: block;
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  color: var(--ink);
+  font-style: italic;
+}
+.cc-fig-role {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+.cc-desktop-main {
+  position: relative;
+  padding: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.cc-desktop-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 12px 4px;
+}
+.cc-desktop-card > * { flex: 0 0 auto; min-height: max-content; }
+.cc-desktop-card::-webkit-scrollbar { display: none; }
+.cc-desktop-card { scrollbar-width: none; }
+
+/* ── Header ── */
+.cc-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 8px 6px 4px;
+}
+.cc-monogram {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  position: relative;
+  filter: drop-shadow(0 4px 16px color-mix(in oklab, var(--accent) 40%, transparent));
+}
+.cc-monogram svg { width: 100%; height: 100%; display: block; }
+.cc-name {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin: 4px 0 0;
+}
+.cc-name em { font-style: italic; color: var(--accent); }
+.cc-tagline { font-size: 13px; color: var(--ink-2); margin: 0; letter-spacing: 0.005em; }
+.cc-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-top: 2px;
+}
+.cc-stars { display: inline-flex; gap: 1px; color: var(--accent); }
+.cc-star svg { width: 13px; height: 13px; display: block; }
+.cc-rating-num { font-weight: 600; color: var(--ink); }
+.cc-rating-meta { color: var(--ink-3); }
+
+/* ── Uploader ── */
+.cc-uploader {
+  position: relative;
+  border-radius: var(--cc-radius);
+  background: var(--shine), var(--surface);
+  border: 1px solid var(--border-2);
+  padding: 22px 22px 20px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.cc-uploader::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--accent) 25%, transparent);
+}
+.cc-uploader:hover { border-color: color-mix(in oklab, var(--accent) 55%, var(--border-2)); }
+.cc-uploader.cc-drop-hot {
+  border-color: var(--accent);
+  background:
+    radial-gradient(60% 60% at 50% 50%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%),
+    var(--surface);
+  transform: scale(1.005);
+}
+.cc-uploader-glow {
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 80%;
+  background: radial-gradient(50% 50% at 50% 50%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+.cc-uploader-inner {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cc-uploader-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  color: var(--accent);
+  display: grid; place-items: center;
+  margin-bottom: 4px;
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+}
+.cc-uploader-icon svg { width: 22px; height: 22px; }
+.cc-uploader-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 500;
+}
+.cc-uploader-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 30px;
+  line-height: 1.0;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.cc-uploader-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 36ch;
+  margin: 4px 0 8px;
+  text-wrap: pretty;
+}
+.cc-uploader-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+.cc-uploader-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #16120a;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 8px 22px -8px color-mix(in oklab, var(--accent) 70%, transparent);
+  transition: transform 0.15s;
+}
+.cc-uploader-btn svg { width: 17px; height: 17px; }
+.cc-uploader:hover .cc-uploader-btn { transform: translateY(-1px); }
+.cc-uploader-or { font-size: 12px; color: var(--ink-3); letter-spacing: 0.02em; }
+.cc-uploader-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cc-uploader-meta span { display: inline-flex; align-items: center; gap: 4px; }
+.cc-uploader-meta svg { width: 12px; height: 12px; }
+.cc-uploader-busy { cursor: default; }
+.cc-progress-ring { position: relative; width: 64px; height: 64px; color: var(--accent); margin-bottom: 6px; }
+.cc-progress-ring svg { width: 100%; height: 100%; }
+.cc-progress-ring span {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.cc-uploader-review { cursor: default; padding-bottom: 22px; }
+.cc-review-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  margin-bottom: 4px;
+}
+.cc-estimate {
+  font-family: 'Instrument Serif', serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: baseline;
+  margin: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+.cc-estimate-currency { font-size: 26px; color: var(--accent); margin-right: 2px; }
+.cc-estimate-dash { font-size: 26px; color: var(--ink-3); margin: 0 8px; align-self: center; }
+.cc-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+  margin: 14px 0 6px;
+}
+.cc-thumb {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+}
+.cc-thumb-add {
+  display: grid; place-items: center;
+  font-size: 22px;
+  color: var(--ink-3);
+  cursor: pointer;
+  background: var(--surface-2);
+  transition: background .15s;
+}
+.cc-thumb-add:hover { background: var(--surface-hover); color: var(--ink); }
+.cc-review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+.cc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #16120a;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s, filter .15s;
+}
+.cc-btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.cc-btn-primary svg { width: 16px; height: 16px; }
+.cc-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-2);
+  color: var(--ink-2);
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.cc-btn-ghost:hover { background: var(--surface-hover); color: var(--ink); }
+.cc-uploader-sent .cc-sent-check {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--good);
+  color: #fff;
+  display: grid; place-items: center;
+  margin-bottom: 4px;
+}
+.cc-uploader-sent .cc-sent-check svg { width: 30px; height: 30px; }
+
+/* ── Link rows ── */
+.cc-links { display: flex; flex-direction: column; gap: 10px; }
+.cc-link {
+  display: grid;
+  grid-template-columns: 44px 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--cc-radius-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: transform .15s, background .15s, border-color .15s;
+  font-size: 15px;
+  width: 100%;
+  text-decoration: none;
+}
+.cc-link:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-2);
+  transform: translateY(-1px);
+}
+.cc-link:active { transform: translateY(0); }
+.cc-link-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent);
+}
+.cc-link-icon svg { width: 19px; height: 19px; }
+.cc-link-icon[data-accent="gold"] {
+  background: color-mix(in oklab, var(--gold) 16%, transparent);
+  color: var(--gold);
+  border-color: color-mix(in oklab, var(--gold) 26%, transparent);
+}
+.cc-link-icon[data-accent="sky"] {
+  background: color-mix(in oklab, var(--sky) 16%, transparent);
+  color: var(--sky);
+  border-color: color-mix(in oklab, var(--sky) 26%, transparent);
+}
+.cc-link-icon[data-accent="leaf"] {
+  background: color-mix(in oklab, var(--leaf) 16%, transparent);
+  color: var(--leaf);
+  border-color: color-mix(in oklab, var(--leaf) 26%, transparent);
+}
+.cc-link-icon[data-accent="rose"] {
+  background: color-mix(in oklab, var(--rose) 16%, transparent);
+  color: var(--rose);
+  border-color: color-mix(in oklab, var(--rose) 26%, transparent);
+}
+.cc-link-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.cc-link-label { font-weight: 500; color: var(--ink); font-size: 15px; letter-spacing: -0.005em; }
+.cc-link-sub {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cc-link-badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+}
+.cc-link-chev { color: var(--ink-3); display: flex; transition: transform .15s, color .15s; }
+.cc-link-chev svg { width: 16px; height: 16px; }
+.cc-link:hover .cc-link-chev { color: var(--accent); transform: translateX(3px); }
+
+/* ── Footer ── */
+.cc-foot {
+  margin-top: 6px;
+  padding: 18px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+}
+.cc-foot-hours { display: flex; flex-direction: column; gap: 6px; }
+.cc-foot-hours-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+}
+.cc-foot-hours ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cc-foot-hours li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.cc-foot-hours li span:last-child { color: var(--ink); font-weight: 500; }
+.cc-foot-fine {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-3);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  letter-spacing: 0.005em;
+}
+.cc-foot-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+.cc-theme-btn {
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  color: var(--ink-2);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  font-family: inherit;
+}
+.cc-theme-btn:hover { background: var(--surface-hover); color: var(--ink); }
+.cc-theme-btn.active { border-color: var(--accent); color: var(--accent); background: color-mix(in oklab, var(--accent) 8%, transparent); }
+
+/* ── Toast ── */
+.cc-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  z-index: 200;
+  animation: cc-toast 0.25s ease-out;
+}
+@keyframes cc-toast {
+  from { transform: translate(-50%, 8px); opacity: 0; }
+  to   { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* ── Focus rings ── */
+.cc-root button:focus-visible,
+.cc-root [role="button"]:focus-visible,
+.cc-root a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+</style>
+</head>
+<body class="theme-vault">
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-E9zfnRxKXtM+Yqe9RrVgE0YFh3L+G9z6Yn/x6tLUbYB3Kj8rP2I5E1V4Y0bP9Lk" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-7hs3HtB2R5UGhiVW8u6iE5ZDsKQMpBNUj2t6nOw9V4gYbKbKhZl4N7U9H4TZFSL" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+// ── Real action URLs (swap these for the dealer's actual info) ──
+const DEALER = {
+  name: 'Halverson & Co.',
+  phone: '+15035550182',
+  whatsapp: '15035550182',
+  mapsQuery: '2418+NW+Quimby+St+Portland+OR',
+  reviewUrl: 'https://g.page/r/REPLACE_WITH_REAL_REVIEW_URL/review',
+};
+
+const PHONE_URL = `tel:${DEALER.phone}`;
+const SMS_URL   = `sms:${DEALER.phone}`;
+const WA_URL    = `https://wa.me/${DEALER.whatsapp}`;
+const MAPS_URL  = `https://maps.google.com/?q=${DEALER.mapsQuery}`;
+const REVIEW_URL = DEALER.reviewUrl;
+
+// ── Icons ──
+const ICONS = {
+  phone: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
+  text: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>,
+  whatsapp: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.7-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>,
+  map: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+  star: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
+  starOutline: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
+  camera: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>,
+  upload: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>,
+  arrow: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+  check: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
+  shield: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+  clock: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+  sun: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>,
+  moon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>,
+};
+
+// ── Photo Uploader ──
+function PhotoUploader() {
+  const [stage, setStage] = useState('idle');
+  const [photos, setPhotos] = useState([]);
+  const [progress, setProgress] = useState(0);
+  const fileRef = useRef(null);
+
+  const addFiles = (files) => {
+    const list = Array.from(files || []).slice(0, 6);
+    if (!list.length) return;
+    const reads = list.map(f => new Promise(res => {
+      const r = new FileReader();
+      r.onload = () => res({ id: Math.random().toString(36).slice(2), src: r.result });
+      r.readAsDataURL(f);
+    }));
+    Promise.all(reads).then(items => {
+      setPhotos(p => [...p, ...items].slice(0, 6));
+      setStage('uploading');
+      setProgress(0);
+      let p = 0;
+      const t = setInterval(() => {
+        p += Math.random() * 22 + 8;
+        if (p >= 100) {
+          p = 100; clearInterval(t);
+          setTimeout(() => setStage('review'), 300);
+        }
+        setProgress(p);
+      }, 180);
+    });
+  };
+
+  const onDrop = (e) => {
+    e.preventDefault();
+    e.currentTarget.classList.remove('cc-drop-hot');
+    addFiles(e.dataTransfer.files);
+  };
+
+  const reset = () => { setPhotos([]); setStage('idle'); setProgress(0); };
+
+  const lo = 480 + photos.length * 35;
+  const hi = lo + 220 + photos.length * 30;
+
+  if (stage === 'idle') return (
+    <div className="cc-uploader"
+      onDragOver={e => { e.preventDefault(); e.currentTarget.classList.add('cc-drop-hot'); }}
+      onDragLeave={e => e.currentTarget.classList.remove('cc-drop-hot')}
+      onDrop={onDrop}
+      onClick={() => fileRef.current?.click()}
+      role="button" tabIndex={0}
+      onKeyDown={e => e.key === 'Enter' && fileRef.current?.click()}
+    >
+      <div className="cc-uploader-glow" aria-hidden="true"></div>
+      <div className="cc-uploader-inner">
+        <div className="cc-uploader-icon">{ICONS.camera}</div>
+        <div className="cc-uploader-eyebrow">Free instant estimate</div>
+        <h3 className="cc-uploader-title">Snap your silver,<br />get an offer today.</h3>
+        <p className="cc-uploader-sub">Drop a few photos of what you're selling. We reply with a real cash offer within the hour — no obligation, no pressure.</p>
+        <div className="cc-uploader-cta">
+          <span className="cc-uploader-btn">{ICONS.upload} Upload photos</span>
+          <span className="cc-uploader-or">or drag &amp; drop</span>
+        </div>
+        <div className="cc-uploader-meta">
+          <span>{ICONS.shield} Insured &amp; bonded</span>
+          <span>·</span>
+          <span>{ICONS.clock} Reply in &lt;1 hr, 7 days</span>
+        </div>
+      </div>
+      <input ref={fileRef} type="file" accept="image/*" multiple style={{ display:'none' }} onChange={e => addFiles(e.target.files)} />
+    </div>
+  );
+
+  if (stage === 'uploading') return (
+    <div className="cc-uploader cc-uploader-busy">
+      <div className="cc-uploader-inner">
+        <div className="cc-progress-ring">
+          <svg viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="28" stroke="currentColor" strokeOpacity="0.15" strokeWidth="3" fill="none"/>
+            <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round"
+              strokeDasharray={2 * Math.PI * 28}
+              strokeDashoffset={2 * Math.PI * 28 * (1 - progress / 100)}
+              transform="rotate(-90 32 32)"
+              style={{ transition: 'stroke-dashoffset .2s linear' }}
+            />
+          </svg>
+          <span>{Math.round(progress)}%</span>
+        </div>
+        <h3 className="cc-uploader-title">Analyzing photos</h3>
+        <p className="cc-uploader-sub">Reading hallmarks, weighing visually, cross-checking today's spot price ($34.21/oz)…</p>
+      </div>
+    </div>
+  );
+
+  if (stage === 'review') return (
+    <div className="cc-uploader cc-uploader-review">
+      <div className="cc-uploader-inner">
+        <div className="cc-review-eyebrow"><span className="cc-dot"></span> Preliminary estimate</div>
+        <div className="cc-estimate">
+          <span className="cc-estimate-currency">$</span>
+          <span className="cc-estimate-lo">{lo.toLocaleString()}</span>
+          <span className="cc-estimate-dash">–</span>
+          <span className="cc-estimate-hi">${hi.toLocaleString()}</span>
+        </div>
+        <p className="cc-uploader-sub">
+          Range based on {photos.length} photo{photos.length === 1 ? '' : 's'} at today's spot. A locked offer follows once we see the pieces in person — bring them in or we'll come to you.
+        </p>
+        <div className="cc-thumbs">
+          {photos.map(p => <div key={p.id} className="cc-thumb" style={{ backgroundImage: `url(${p.src})` }}></div>)}
+          {photos.length < 6 && <button className="cc-thumb cc-thumb-add" onClick={() => fileRef.current?.click()} aria-label="Add more">+</button>}
+        </div>
+        <div className="cc-review-actions">
+          <button className="cc-btn-primary" onClick={() => setStage('sent')}>Send to dealer for firm offer {ICONS.arrow}</button>
+          <button className="cc-btn-ghost" onClick={reset}>Start over</button>
+        </div>
+        <input ref={fileRef} type="file" accept="image/*" multiple style={{ display:'none' }} onChange={e => addFiles(e.target.files)} />
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="cc-uploader cc-uploader-sent">
+      <div className="cc-uploader-inner">
+        <div className="cc-sent-check">{ICONS.check}</div>
+        <h3 className="cc-uploader-title">Sent to Marcus.</h3>
+        <p className="cc-uploader-sub">You'll hear back by text within the hour. In the meantime, here's where to find us, or tap to call directly.</p>
+        <button className="cc-btn-ghost" onClick={reset}>Submit another batch</button>
+      </div>
+    </div>
+  );
+}
+
+// ── Header ──
+function CardHeader() {
+  return (
+    <header className="cc-head">
+      <div className="cc-monogram" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <defs>
+            <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="var(--mg-1)" />
+              <stop offset=".5" stopColor="var(--mg-2)" />
+              <stop offset="1" stopColor="var(--mg-3)" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="31" fill="url(#mg)" />
+          <circle cx="32" cy="32" r="30.5" fill="none" stroke="var(--mg-stroke)" strokeWidth="0.5" />
+          <text x="32" y="40" textAnchor="middle" fontFamily="'Instrument Serif', serif" fontSize="28" fill="var(--mg-text)" fontStyle="italic">H&amp;Co</text>
+        </svg>
+      </div>
+      <h1 className="cc-name">Halverson <em>&amp; Co.</em></h1>
+      <p className="cc-tagline">Family silver buyer · Est. 1987 · Portland, OR</p>
+      <div className="cc-rating">
+        <span className="cc-stars">{[0,1,2,3,4].map(i => <span key={i} className="cc-star">{ICONS.star}</span>)}</span>
+        <span className="cc-rating-num">4.9</span>
+        <span className="cc-rating-meta">· 612 Google reviews</span>
+      </div>
+    </header>
+  );
+}
+
+// ── Link row (anchor for real navigation) ──
+function LinkRow({ icon, label, sub, accent, badge, href, onClick }) {
+  const handleClick = (e) => {
+    if (onClick) onClick(e);
+  };
+  return (
+    <a className="cc-link" href={href} onClick={handleClick} target={href && href.startsWith('http') ? '_blank' : undefined} rel={href && href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+      <span className="cc-link-icon" data-accent={accent}>{icon}</span>
+      <span className="cc-link-text">
+        <span className="cc-link-label">{label}</span>
+        {sub && <span className="cc-link-sub">{sub}</span>}
+      </span>
+      {badge && <span className="cc-link-badge">{badge}</span>}
+      <span className="cc-link-chev">{ICONS.arrow}</span>
+    </a>
+  );
+}
+
+// ── Footer ──
+function FootBlock({ theme, onThemeChange }) {
+  return (
+    <footer className="cc-foot">
+      <div className="cc-foot-hours">
+        <div className="cc-foot-hours-title">Shop hours</div>
+        <ul>
+          <li><span>Mon – Fri</span><span>9:00 — 6:00</span></li>
+          <li><span>Saturday</span><span>10:00 — 4:00</span></li>
+          <li><span>Sunday</span><span>By appointment</span></li>
+        </ul>
+      </div>
+      <div className="cc-foot-fine">
+        Halverson &amp; Co. is a bonded precious-metals dealer (OR-PMD #41822). State ID required for transactions over $200.
+      </div>
+      <div className="cc-foot-theme">
+        <button className={`cc-theme-btn ${theme === 'vault' ? 'active' : ''}`} onClick={() => onThemeChange('vault')} title="Dark theme">
+          {ICONS.moon}
+        </button>
+        <button className={`cc-theme-btn ${theme === 'daylight' ? 'active' : ''}`} onClick={() => onThemeChange('daylight')} title="Light theme">
+          {ICONS.sun}
+        </button>
+      </div>
+    </footer>
+  );
+}
+
+// ── Main App ──
+function App() {
+  const [theme, setTheme] = useState('vault');
+  const [layout, setLayout] = useState(window.innerWidth >= 800 ? 'desktop' : 'mobile');
+  const [toast, setToast] = useState(null);
+
+  useEffect(() => {
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 800px)');
+    const handler = e => setLayout(e.matches ? 'desktop' : 'mobile');
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const showToast = (msg) => {
+    setToast(msg);
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => setToast(null), 2400);
+  };
+
+  const links = [
+    { icon: ICONS.phone,      label: 'Call us',                    sub: '(503) 555-0182 · Marcus, owner', accent: 'gold', href: PHONE_URL },
+    { icon: ICONS.text,       label: 'Text for a quick quote',      sub: 'Replies usually under 10 min',   accent: 'sky',  href: SMS_URL },
+    { icon: ICONS.whatsapp,   label: 'WhatsApp',                   sub: 'Send photos & chat live',         accent: 'leaf', href: WA_URL,     badge: 'Fastest' },
+    { icon: ICONS.map,        label: 'Directions to the shop',     sub: '2418 NW Quimby St · 0.5mi free parking', accent: 'rose', href: MAPS_URL },
+    { icon: ICONS.starOutline, label: 'Leave a Google review',     sub: 'It really helps the family business', accent: 'gold', href: REVIEW_URL, onClick: e => { if (REVIEW_URL.includes('REPLACE')) { e.preventDefault(); showToast('Google Reviews link coming soon'); } } },
+  ];
+
+  const cardContent = (
+    <>
+      <CardHeader />
+      <PhotoUploader />
+      <div className="cc-links">
+        {links.map((l, i) => <LinkRow key={i} {...l} />)}
+      </div>
+      <FootBlock theme={theme} onThemeChange={setTheme} />
+    </>
+  );
+
+  return (
+    <div className={`cc-root cc-variant-${theme}`}>
+      {/* Mobile layout */}
+      {layout === 'mobile' && (
+        <div className="cc-mobile">
+          <div className="cc-mobile-bg" aria-hidden="true">
+            <div className="cc-mobile-bg-grain"></div>
+          </div>
+          <div className="cc-mobile-scroll">{cardContent}</div>
+        </div>
+      )}
+
+      {/* Desktop layout */}
+      {layout === 'desktop' && (
+        <div className="cc-desktop cc-desktop-show">
+          <aside className="cc-desktop-side">
+            <div className="cc-desktop-side-bg" aria-hidden="true"></div>
+            <div className="cc-desktop-side-inner">
+              <div className="cc-desktop-eyebrow">
+                <span className="cc-dot cc-dot-live"></span>
+                Open now · until 6:00 PM
+              </div>
+              <h2 className="cc-desktop-headline">We pay <em>honest</em> prices<br />for the silver in<br />your top drawer.</h2>
+              <p className="cc-desktop-lede">
+                Flatware, tea sets, coins, scrap, hollowware, sterling jewelry. Bring it in or text photos — we'll quote it the same day, pay you in cash, and you'll know exactly how we got the number.
+              </p>
+              <div className="cc-stats">
+                <div className="cc-stat">
+                  <div className="cc-stat-num">39<span>yrs</span></div>
+                  <div className="cc-stat-lbl">Buying silver in PDX</div>
+                </div>
+                <div className="cc-stat-div"></div>
+                <div className="cc-stat">
+                  <div className="cc-stat-num">$34.21</div>
+                  <div className="cc-stat-lbl">Today's spot, per troy oz</div>
+                </div>
+                <div className="cc-stat-div"></div>
+                <div className="cc-stat">
+                  <div className="cc-stat-num">94<span>%</span></div>
+                  <div className="cc-stat-lbl">Of spot we pay on sterling</div>
+                </div>
+              </div>
+              <figure className="cc-desktop-fig">
+                <div className="cc-fig-frame">
+                  <div className="cc-fig-placeholder"><span>SHOP PHOTO · 2418 NW QUIMBY ST</span></div>
+                </div>
+                <figcaption>
+                  <span className="cc-fig-name">Marcus Halverson</span>
+                  <span className="cc-fig-role">Third-generation buyer. He'll be the one weighing your pieces.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </aside>
+          <main className="cc-desktop-main">
+            <div className="cc-mobile-bg" aria-hidden="true">
+              <div className="cc-mobile-bg-grain"></div>
+            </div>
+            <div className="cc-desktop-card">{cardContent}</div>
+          </main>
+        </div>
+      )}
+
+      {toast && <div className="cc-toast" role="status">{toast}</div>}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
