@@ -3,1005 +3,1077 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Estate Gold &amp; Silver — N. Mammon</title>
-<meta name="description" content="Get top value for your gold, silver, coins, jewelry and estate items. Call or text 917-715-6245 for a same-day cash offer. Honest. Professional. Local." />
-<meta property="og:title" content="Estate Gold &amp; Silver — N. Mammon" />
-<meta property="og:description" content="We buy gold, silver, coins, jewelry &amp; estate items. Same-day cash offers. Call 917-715-6245." />
-<meta property="og:type" content="website" />
-<link rel="icon" href="assets/n-mammon-logo.png" type="image/png" sizes="any" />
+<title>N. Mammon — Buyers of Gold, Silver, Coins &amp; Antiques</title>
+<meta name="description" content="N. Mammon buys gold, silver, coins and antiques. Honest, professional, local. Same-day cash offers. House calls. Call or text (917) 715-6245." />
+<meta property="og:title" content="N. Mammon — Estate Gold &amp; Silver" />
+<meta property="og:description" content="We buy gold, silver, coins &amp; antiques. Same-day cash. (917) 715-6245." />
+<meta name="theme-color" content="#ece2cd" />
+<link rel="icon" href="assets/n-mammon-logo.png" type="image/png" />
 <link rel="apple-touch-icon" href="assets/n-mammon-logo.png" />
+<script>document.documentElement.classList.add('has-js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
 <style>
-/* ── Reset ── */
+/* ─────────────────────────────────────────────
+   N. Mammon — buyer of gold, silver, coins & antiques.
+   A printed-paper, catalog-style page. No boxes.
+   ───────────────────────────────────────────── */
+
+:root {
+  --paper:   #ece2cd;     /* aged cream */
+  --paper-2: #e3d8bf;     /* slight shadow */
+  --ink:     #1f1610;     /* warm near-black */
+  --ink-2:   #4a3a2a;     /* muted */
+  --ink-3:   #8a7458;     /* mute mute */
+  --rule:    #c9b89a;     /* sepia rule */
+  --blood:   #6b1d1d;     /* oxblood accent — used sparingly */
+  --blood-2: #8a2828;
+  --gutter:  clamp(20px, 5vw, 64px);
+  --max:     1280px;
+}
+
+/* ── reset ── */
 *, *::before, *::after { box-sizing: border-box; }
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-html, body {
-  margin: 0; padding: 0;
-  min-height: 100%;
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-body.theme-vault    { background: #080604; }
-body.theme-daylight { background: #f0ede6; }
-
-/* ── ContactCard root ── */
-.cc-root,
-.cc-root *,
-.cc-root *::before,
-.cc-root *::after { box-sizing: border-box; }
-.cc-root {
-  --cc-pad: 22px;
-  --cc-radius: 22px;
-  --cc-radius-sm: 14px;
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  font-feature-settings: 'ss01','ss02','cv11';
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
   color: var(--ink);
-  line-height: 1.45;
-  letter-spacing: -0.005em;
-  width: 100%;
-  min-height: 100svh;
+  font-family: 'EB Garamond', 'Cambria', Georgia, serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga', 'kern', 'onum';
   position: relative;
-}
-.cc-root button {
-  font-family: inherit;
-  color: inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* ── Theme A · Vault (flyer: black + bright gold) ── */
-.cc-variant-vault {
-  --bg: #080604;
-  --bg-2: #110e08;
-  --surface: rgba(212,164,24,0.06);
-  --surface-2: rgba(212,164,24,0.09);
-  --surface-hover: rgba(212,164,24,0.13);
-  --border: rgba(212,164,24,0.14);
-  --border-2: rgba(212,164,24,0.28);
-  --ink: #ffffff;
-  --ink-2: rgba(255,255,255,0.72);
-  --ink-3: rgba(255,255,255,0.44);
-  --accent: #D4A418;
-  --accent-2: #f0c832;
-  --accent-3: #a07a10;
-  --good: #6ec97a;
-  --gold: #D4A418;
-  --sky: #5cb8e0;
-  --leaf: #6ec97a;
-  --rose: #e07070;
-  --shadow: 0 30px 60px -20px rgba(0,0,0,0.8), 0 8px 20px rgba(0,0,0,0.5);
-  --mg-1: #1a1408;
-  --mg-2: #3a2c08;
-  --mg-3: #D4A418;
-  --mg-stroke: rgba(212,164,24,0.7);
-  --mg-text: #ffffff;
-  --shine: linear-gradient(135deg, rgba(212,164,24,0.20), rgba(212,164,24,0) 60%);
-}
-
-/* ── Theme B · Daylight ── */
-.cc-variant-daylight {
-  --bg: #f0ede6;
-  --bg-2: #e5e0d6;
-  --surface: #faf8f2;
-  --surface-2: #fff;
-  --surface-hover: #fffdf5;
-  --border: rgba(40,28,0,0.10);
-  --border-2: rgba(40,28,0,0.20);
-  --ink: #1a1400;
-  --ink-2: rgba(26,20,0,0.70);
-  --ink-3: rgba(26,20,0,0.46);
-  --accent: #9a7410;
-  --accent-2: #c09820;
-  --accent-3: #6a5008;
-  --good: #3a7c3c;
-  --gold: #9a7410;
-  --sky: #3a6a8a;
-  --leaf: #3a7c3c;
-  --rose: #a3504a;
-  --shadow: 0 20px 50px -16px rgba(50,36,18,0.18), 0 4px 14px rgba(50,36,18,0.08);
-  --mg-1: #fbf7ec;
-  --mg-2: #e2d3b1;
-  --mg-3: #8a6c3a;
-  --mg-stroke: rgba(138,108,58,0.5);
-  --mg-text: #1f1a12;
-  --shine: linear-gradient(135deg, rgba(138,108,58,0.08), rgba(138,108,58,0) 60%);
-}
-
-/* ── Page shell (single-column, all screen sizes) ── */
-.cc-page {
-  position: relative;
-  min-height: 100svh;
-  background: var(--bg);
   overflow-x: hidden;
 }
-.cc-page-bg {
-  position: fixed;
-  inset: 0;
+
+/* paper texture — faint warm noise */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    radial-gradient(ellipse at 12% 8%,  rgba(140, 100, 50, 0.06), transparent 50%),
+    radial-gradient(ellipse at 88% 92%, rgba(80, 50, 20, 0.05),  transparent 50%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(60, 35, 15, 0.012) 0, rgba(60, 35, 15, 0.012) 1px, transparent 1px, transparent 3px);
   pointer-events: none;
   z-index: 0;
+  mix-blend-mode: multiply;
 }
-.cc-variant-vault .cc-page-bg {
-  background:
-    radial-gradient(120% 55% at 50% -5%, rgba(212,164,24,0.22), transparent 55%),
-    radial-gradient(70% 35% at 100% 100%, rgba(212,164,24,0.10), transparent 60%),
-    linear-gradient(180deg, #0e0a04 0%, #080604 100%);
-}
-.cc-variant-daylight .cc-page-bg {
-  background:
-    radial-gradient(140% 60% at 50% -20%, rgba(255,240,180,0.85), transparent 65%),
-    radial-gradient(80% 50% at 100% 110%, rgba(200,160,20,0.15), transparent 60%),
-    linear-gradient(180deg, #f0ede6 0%, #e8e2d4 100%);
-}
-.cc-page-grain {
-  position: absolute; inset: 0;
-  background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.012) 2px 3px);
-  mix-blend-mode: overlay;
-  opacity: 0.6;
-}
-.cc-card {
+
+a { color: var(--ink); text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* ── shared content width ── */
+.frame {
   position: relative;
   z-index: 1;
-  padding: 56px 18px 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  max-width: 480px;
+  max-width: var(--max);
   margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
-.cc-card > * { flex: 0 0 auto; min-height: max-content; }
 
-/* ── Header ── */
-.cc-head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  padding: 8px 6px 4px;
-}
-.cc-monogram {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  padding: 4px;
-  background: #0a0907;
-  border: 1px solid var(--border-2);
-  box-shadow: none;
-}
-.cc-monogram-logo {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  padding: 0;
-  box-sizing: border-box;
-}
-.cc-headline {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-weight: 400;
-  font-size: 34px;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 8px 0 0;
-}
-.cc-headline em { font-style: italic; color: var(--accent); }
-.cc-brand {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--accent);
-  margin: 4px 0 0;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-}
-.cc-tagline { font-size: 13px; color: var(--ink-2); margin: 0; letter-spacing: 0.005em; }
-.cc-rating {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--ink-2);
-  margin-top: 2px;
-}
-.cc-stars { display: inline-flex; gap: 1px; color: var(--accent); }
-.cc-star svg { width: 13px; height: 13px; display: block; }
-.cc-rating-num { font-weight: 600; color: var(--ink); }
-.cc-rating-meta { color: var(--ink-3); }
-
-/* ── Uploader ── */
-.cc-uploader {
-  --cc-up-x: 22px;
-  --cc-up-y-top: 22px;
-  --cc-up-y-bottom: 24px;
-  position: relative;
-  border-radius: var(--cc-radius);
-  background: var(--shine), var(--surface);
-  border: 1px solid var(--border-2);
-  padding: var(--cc-up-y-top) var(--cc-up-x) var(--cc-up-y-bottom);
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-  cursor: default;
-  box-shadow: var(--shadow);
-}
-.cc-uploader::before {
-  content: ''; position: absolute; inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--accent) 25%, transparent);
-}
-.cc-uploader:hover { border-color: color-mix(in oklab, var(--accent) 55%, var(--border-2)); }
-.cc-uploader-glow {
-  position: absolute;
-  inset: -40% -10% auto -10%;
-  height: 80%;
-  background: radial-gradient(50% 50% at 50% 50%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-  opacity: 0.55;
-}
-.cc-uploader-hero {
-  display: block;
-  margin: calc(-1 * var(--cc-up-y-top)) calc(-1 * var(--cc-up-x)) 16px;
-  width: calc(100% + 2 * var(--cc-up-x));
-  max-width: none;
-  position: relative;
-  z-index: 0;
-  /* Full-bleed width: avoid aspect-ratio + max-height shrinking width below 100%. */
-  height: clamp(120px, min(42vw, 240px), 240px);
-  overflow: hidden;
-  background: var(--surface-2);
-}
-.cc-uploader-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  display: block;
-}
-.cc-uploader-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.cc-uploader-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: color-mix(in oklab, var(--accent) 18%, transparent);
-  color: var(--accent);
-  display: grid; place-items: center;
-  margin-bottom: 4px;
-  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
-}
-.cc-uploader-icon svg { width: 22px; height: 22px; }
-.cc-uploader-eyebrow {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  font-weight: 500;
-}
-.cc-uploader-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: 30px;
-  line-height: 1.0;
-  margin: 0;
-  color: var(--ink);
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-.cc-uploader-sub {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--ink-2);
-  max-width: 36ch;
-  margin: 4px 0 8px;
-  text-wrap: pretty;
-}
-.cc-uploader-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: 2px;
-}
-.cc-uploader-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  color: var(--ink-3);
-  margin-top: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.cc-uploader-meta span { display: inline-flex; align-items: center; gap: 4px; }
-.cc-uploader-meta svg { width: 12px; height: 12px; }
-.cc-uploader-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 22px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #16120a;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: -0.01em;
-  box-shadow: 0 8px 22px -8px color-mix(in oklab, var(--accent) 70%, transparent);
-  transition: transform 0.15s;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-.cc-uploader-btn svg { width: 17px; height: 17px; }
-.cc-uploader-btn:hover { transform: translateY(-1px); }
-
-/* ── Google Form modal ── */
-.cc-gf-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.62);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-left));
-  animation: cc-gf-in 0.2s ease-out;
-}
-@keyframes cc-gf-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@media (min-width: 560px) {
-  .cc-gf-backdrop { align-items: center; padding-top: max(16px, env(safe-area-inset-top)); }
-}
-.cc-gf-modal {
-  width: min(100%, 440px);
-  max-height: min(88dvh, 520px);
-  background: var(--bg-2);
-  border: 1px solid var(--border-2);
-  border-radius: var(--cc-radius);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-@media (min-width: 560px) {
-  .cc-gf-modal { border-radius: var(--cc-radius); }
-}
-.cc-gf-head {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
-}
-.cc-gf-head h2 {
-  margin: 0;
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-.cc-gf-close {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--ink);
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
+/* ════════════════════════════════════════════
+   OPENING — just the logo, centered, full viewport.
+   The page opens as a quiet moment before any words.
+   ════════════════════════════════════════════ */
+.opening {
+  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
-  transition: background .15s, color .15s;
+  padding: clamp(40px, 6vw, 80px) var(--gutter);
+  position: relative;
 }
-.cc-gf-close:hover { background: var(--surface-hover); color: var(--accent); }
-.cc-gf-body {
-  padding: 20px 18px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-2);
-  background: var(--surface);
-}
-.cc-gf-body p { margin: 0; }
-.cc-gf-open {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 14px;
-  background: var(--accent);
-  color: #16120a;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  box-shadow: 0 8px 22px -8px color-mix(in oklab, var(--accent) 70%, transparent);
-  transition: transform 0.15s;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-.cc-gf-open:hover { transform: translateY(-1px); }
-.cc-gf-open svg { width: 18px; height: 18px; flex-shrink: 0; }
-.cc-gf-placeholder {
-  padding: 8px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--ink-2);
-  text-align: left;
-}
-.cc-gf-placeholder strong { color: var(--ink); }
-.cc-gf-placeholder code {
-  font-family: 'Geist Mono', ui-monospace, monospace;
-  font-size: 11px;
-  word-break: break-all;
+.opening-logo {
+  width: clamp(180px, 22vw, 340px);
+  height: auto;
   display: block;
-  padding: 10px;
-  background: var(--surface-2);
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  /* Soft entry on page load */
+  opacity: 0;
+  transform: scale(0.94);
+  animation: opening-in 1.6s 0.15s var(--ease, cubic-bezier(.2,.7,.2,1)) forwards;
+  /* Will be overridden by scroll-linked fade-out on JS-enabled browsers */
 }
-
-/* ── Link rows ── */
-.cc-links { display: flex; flex-direction: column; gap: 10px; }
-.cc-link {
-  display: grid;
-  grid-template-columns: 44px 1fr auto auto;
-  align-items: center;
-  gap: 14px;
-  padding: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--cc-radius-sm);
-  text-align: left;
-  cursor: pointer;
-  transition: transform .15s, background .15s, border-color .15s;
-  font-size: 15px;
-  width: 100%;
-  text-decoration: none;
+@keyframes opening-in {
+  to { opacity: 1; transform: scale(1); }
 }
-.cc-link:hover {
-  background: var(--surface-hover);
-  border-color: var(--border-2);
-  transform: translateY(-1px);
-}
-.cc-link:active { transform: translateY(0); }
-.cc-link-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  display: grid; place-items: center;
-  background: color-mix(in oklab, var(--accent) 14%, transparent);
-  color: var(--accent);
-  border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent);
-}
-.cc-link-icon svg { width: 19px; height: 19px; }
-.cc-link-icon[data-accent="gold"] {
-  background: color-mix(in oklab, var(--gold) 16%, transparent);
-  color: var(--gold);
-  border-color: color-mix(in oklab, var(--gold) 26%, transparent);
-}
-.cc-link-icon[data-accent="sky"] {
-  background: color-mix(in oklab, var(--sky) 16%, transparent);
-  color: var(--sky);
-  border-color: color-mix(in oklab, var(--sky) 26%, transparent);
-}
-.cc-link-icon[data-accent="leaf"] {
-  background: color-mix(in oklab, var(--leaf) 16%, transparent);
-  color: var(--leaf);
-  border-color: color-mix(in oklab, var(--leaf) 26%, transparent);
-}
-.cc-link-icon[data-accent="rose"] {
-  background: color-mix(in oklab, var(--rose) 16%, transparent);
-  color: var(--rose);
-  border-color: color-mix(in oklab, var(--rose) 26%, transparent);
-}
-.cc-link-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-.cc-link-label { font-weight: 500; color: var(--ink); font-size: 15px; letter-spacing: -0.005em; }
-.cc-link-sub {
-  font-size: 12.5px;
-  color: var(--ink-3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.cc-link-badge {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  color: var(--accent);
-  border: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
-  padding: 3px 7px;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--accent) 8%, transparent);
-}
-.cc-link-chev { color: var(--ink-3); display: flex; transition: transform .15s, color .15s; }
-.cc-link-chev svg { width: 16px; height: 16px; }
-.cc-link:hover .cc-link-chev { color: var(--accent); transform: translateX(3px); }
-
-/* ── Footer ── */
-.cc-foot {
-  margin-top: 6px;
-  padding: 18px 4px 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  border-top: 1px solid var(--border);
-}
-.cc-foot-hours { display: flex; flex-direction: column; gap: 6px; }
-.cc-foot-hours-title {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--ink-3);
-}
-.cc-foot-hours ul {
-  list-style: none; margin: 0; padding: 0;
-  display: flex; flex-direction: column; gap: 4px;
-}
-.cc-foot-hours li {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13.5px;
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
-}
-.cc-foot-hours li span:last-child { color: var(--ink); font-weight: 500; }
-.cc-foot-hours li span:last-child .cc-foot-appt {
-  color: var(--ink-3);
-  font-weight: 400;
-}
-.cc-foot-fine {
-  font-size: 11px;
-  line-height: 1.55;
-  color: var(--ink-3);
-  font-family: 'Geist Mono', ui-monospace, monospace;
-  letter-spacing: 0.005em;
-  text-align: center;
-  max-width: 100%;
-}
-.cc-foot-fine-lead {
-  display: block;
-  margin: 0;
-}
-.cc-foot-fine-house {
-  display: block;
-  margin: 8px 0 0;
-  font-weight: 700;
-  color: var(--ink-2);
-  font-family: inherit;
-  letter-spacing: 0.02em;
-}
-.cc-foot-theme {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding-top: 8px;
-}
-.cc-theme-btn {
-  background: var(--surface);
-  border: 1px solid var(--border-2);
-  color: var(--ink-2);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background .15s, color .15s, border-color .15s;
-  font-family: inherit;
-}
-.cc-theme-btn:hover { background: var(--surface-hover); color: var(--ink); }
-.cc-theme-btn.active { border-color: var(--accent); color: var(--accent); background: color-mix(in oklab, var(--accent) 8%, transparent); }
-
-/* ── Toast ── */
-.cc-toast {
-  position: fixed;
-  bottom: 24px;
+.opening-scroll {
+  position: absolute;
+  bottom: clamp(28px, 5vw, 56px);
   left: 50%;
   transform: translateX(-50%);
-  background: var(--ink);
-  color: var(--bg);
-  padding: 10px 16px;
-  border-radius: 999px;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
   font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: var(--ink-3);
+  opacity: 0;
+  animation: opening-in 1.6s 1.0s var(--ease, cubic-bezier(.2,.7,.2,1)) forwards;
+}
+.opening-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: var(--rule);
+  margin: 10px auto 0;
+}
+
+/* ════════════════════════════════════════════
+   MANIFESTO — a centered statement. No picture, no logo.
+   Fades in as you scroll past the opening.
+   ════════════════════════════════════════════ */
+.manifesto {
+  padding: clamp(80px, 14vw, 180px) 0 clamp(80px, 12vw, 160px);
+  text-align: center;
+}
+.manifesto-text {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3.6vw, 48px);
+  line-height: 1.32;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  max-width: 980px;
+  margin: 0 auto;
+  /* For non-JS users: visible by default. For JS users: hidden initially, revealed by scroll. */
+}
+.manifesto-text em {
+  font-style: italic;
+  color: var(--blood);
+}
+.has-js .manifesto-text {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.has-js .manifesto-text.in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.4s var(--ease, cubic-bezier(.2,.7,.2,1)), transform 1.4s var(--ease, cubic-bezier(.2,.7,.2,1));
+}
+
+/* ════════════════════════════════════════════
+   THE BIG PHONE — a billboard, not a button.
+   ════════════════════════════════════════════ */
+.callout {
+  padding: clamp(60px, 8vw, 110px) 0 clamp(40px, 5vw, 70px);
+  text-align: center;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-top: clamp(40px, 5vw, 60px);
+}
+.callout-eyebrow {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(14px, 1.4vw, 16px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 18px;
+}
+.callout-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(52px, 11vw, 152px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0;
+  display: block;
+}
+.callout-number a { color: inherit; transition: color .3s; }
+.callout-number a:hover { color: var(--blood); }
+.callout-sub {
+  margin-top: 18px;
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-style: italic;
+  color: var(--ink-2);
+}
+.callout-sub a {
+  color: var(--blood);
+  border-bottom: 1px solid var(--blood);
+  padding-bottom: 1px;
+  transition: opacity .3s;
+}
+.callout-sub a:hover { opacity: 0.7; }
+
+/* ════════════════════════════════════════════
+   THE CATALOG — numbered entries with photos.
+   ════════════════════════════════════════════ */
+.catalog {
+  padding: clamp(60px, 9vw, 130px) 0 clamp(40px, 6vw, 80px);
+}
+.catalog-intro {
+  max-width: 720px;
+  margin: 0 auto clamp(50px, 7vw, 90px);
+  text-align: center;
+}
+.catalog-intro h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5.6vw, 78px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+.catalog-intro h2 i {
+  font-style: italic;
+  color: var(--blood);
+}
+.catalog-intro p {
+  font-style: italic;
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 6vw, 90px);
+  align-items: center;
+  padding: clamp(40px, 6vw, 70px) 0;
+  position: relative;
+}
+.entry + .entry {
+  border-top: 1px solid var(--rule);
+}
+.entry:nth-child(even) .entry-text { order: 2; }
+.entry:nth-child(even) .entry-image { order: 1; }
+
+.entry-num {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(13px, 1.3vw, 15px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin: 0 0 14px;
+}
+.entry-num span {
+  display: inline-block;
+  margin-right: 14px;
+  font-style: normal;
+  letter-spacing: 0.06em;
+}
+.entry-title {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+.entry-title i {
+  font-style: italic;
+}
+.entry-body {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 0 0 22px;
+  max-width: 480px;
+}
+.entry-body em {
+  font-style: italic;
+  color: var(--ink);
+}
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(14px, 1.25vw, 16px);
+  color: var(--ink-3);
+  font-style: italic;
+}
+.entry-list li {
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.entry-list li:last-child { border-bottom: none; }
+
+.entry-image img {
+  width: 100%;
+  height: auto;
+  filter: sepia(0.12) contrast(1.04);
+}
+.entry-image figcaption {
+  margin-top: 12px;
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════════════════════
+   PROMISE — short prose, no value-strip.
+   ════════════════════════════════════════════ */
+.promise {
+  padding: clamp(70px, 10vw, 140px) 0 clamp(60px, 8vw, 110px);
+  text-align: center;
+  border-top: 1px solid var(--rule);
+}
+.promise h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(34px, 5.4vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 auto 32px;
+  max-width: 820px;
+}
+.promise h2 i {
+  font-style: normal;
+  color: var(--blood);
+}
+.promise p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.promise p + p { margin-top: 18px; }
+.promise .signature {
+  margin-top: 44px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--ink);
+}
+.promise .signature::before {
+  content: '— ';
+  color: var(--blood);
+}
+
+/* ════════════════════════════════════════════
+   QUOTE — invitation, not a bordered form.
+   ════════════════════════════════════════════ */
+.quote {
+  padding: clamp(70px, 10vw, 140px) 0;
+  text-align: center;
+  border-top: 1px solid var(--rule);
+}
+.quote-heading h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin: 0 0 22px;
+}
+.quote-heading h2 i { font-style: italic; color: var(--blood); }
+.quote-heading p {
+  max-width: 540px;
+  margin: 0 auto 48px;
+  font-style: italic;
+  font-size: clamp(17px, 1.5vw, 20px);
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* ── The form itself ── */
+.quote-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.form-field {
+  display: block;
+  margin-bottom: 32px;
+  position: relative;
+}
+.form-row .form-field { margin-bottom: 0; }
+.form-label {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 12.5px;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+.form-label em { font-style: italic; opacity: 0.8; }
+.form-field input,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0 10px;
+  font-family: 'EB Garamond', serif;
+  font-size: 19px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .3s;
+  font-feature-settings: 'liga','onum';
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.form-field input:focus,
+.form-field textarea:focus { border-bottom-color: var(--blood); }
+.form-field textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.5;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--ink-3);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* File upload — styled as a refined link, not a default button */
+.form-files {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+}
+.file-btn {
+  display: block;
+  cursor: pointer;
+  padding: 6px 0;
+}
+.file-btn-text {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--blood);
+  transition: opacity .3s;
+}
+.file-btn:hover .file-btn-text { opacity: 0.7; }
+.file-list {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-3);
+  word-break: break-all;
+}
+
+/* Submit */
+.form-submit {
+  margin-top: 44px;
+  text-align: center;
+}
+.form-cta {
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--blood);
+  padding: 0 4px 4px;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
   font-weight: 500;
-  white-space: nowrap;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-  z-index: 200;
-  animation: cc-toast 0.25s ease-out;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--blood);
+  cursor: pointer;
+  transition: opacity .3s;
+  letter-spacing: 0;
 }
-@keyframes cc-toast {
-  from { transform: translate(-50%, 8px); opacity: 0; }
-  to   { transform: translate(-50%, 0); opacity: 1; }
+.form-cta:hover { opacity: 0.7; }
+.form-or {
+  display: block;
+  margin-top: 22px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-3);
+}
+.form-or a {
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+}
+.form-or a:hover { color: var(--blood); border-color: var(--blood); }
+
+/* Inline success state (triggered by ?sent=1 in URL) */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 32px 0;
+}
+body.sent .quote-form { display: none; }
+body.sent .form-success { display: block; }
+.form-success h3 {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 44px);
+  color: var(--blood);
+  margin: 0 0 14px;
+}
+.form-success p {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 18px;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
-/* ── Small screens / touch ── */
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; gap: 32px; }
+}
+
+
+/* ════════════════════════════════════════════
+   SHOPCARD — hours + reach us, no tile grid.
+   ════════════════════════════════════════════ */
+.shopcard {
+  padding: clamp(70px, 10vw, 140px) 0;
+  border-top: 1px solid var(--rule);
+}
+.shopcard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+.shopcard h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.8vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin: 0 0 30px;
+}
+.shopcard h3 i { font-style: italic; color: var(--blood); }
+
+.reach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.reach-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  font-size: clamp(16px, 1.4vw, 19px);
+}
+.reach-list li:last-child { border-bottom: none; }
+.reach-list .label {
+  font-style: italic;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 0.85em;
+}
+.reach-list .val a {
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, color .3s;
+}
+.reach-list .val a:hover {
+  color: var(--blood);
+  border-color: var(--blood);
+}
+.reach-list .pill {
+  margin-left: 8px;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 0.7em;
+  color: var(--blood);
+  letter-spacing: 0.05em;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+}
+.hours-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  font-size: clamp(16px, 1.4vw, 19px);
+}
+.hours-list li:last-child { border-bottom: none; }
+.hours-list .day {
+  font-style: italic;
+  color: var(--ink);
+}
+.hours-list .time {
+  color: var(--ink);
+  font-feature-settings: 'tnum';
+}
+.hours-list .appt {
+  display: block;
+  font-size: 0.78em;
+  font-style: italic;
+  color: var(--ink-3);
+  text-align: right;
+  margin-top: 2px;
+}
+.housecall {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--blood);
+  margin: 36px 0 0;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER — plain, like a printed colophon.
+   ════════════════════════════════════════════ */
+footer {
+  padding: 40px 0 50px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+footer .colophon { margin: 0 0 6px; }
+footer .colophon strong {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 500;
+}
+footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
+
+/* ════════════════════════════════════════════
+   MODAL — for the Google Form
+   ════════════════════════════════════════════ */
+.modal {
+  position: fixed; inset: 0;
+  background: rgba(20, 14, 8, 0.78);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal.open { display: flex; }
+.modal-paper {
+  max-width: 480px;
+  width: 100%;
+  background: var(--paper);
+  padding: 56px 44px 48px;
+  position: relative;
+  text-align: center;
+}
+.modal-paper h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+.modal-paper h3 i { font-style: italic; color: var(--blood); }
+.modal-paper p {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 17px;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+.modal-paper .quote-cta { font-size: 22px; }
+.modal-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: none;
+  border: none;
+  color: var(--ink-3);
+  font-size: 28px;
+  font-family: 'EB Garamond', serif;
+  line-height: 1;
+  width: 36px; height: 36px;
+  cursor: pointer;
+  font-style: italic;
+}
+.modal-close:hover { color: var(--blood); }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 820px) {
+  .opening { min-height: 92vh; min-height: 92svh; }
+  .opening-logo { width: clamp(160px, 50vw, 240px); }
+  .manifesto { padding: 70px 0 60px; }
+  .manifesto-text { font-size: 26px; line-height: 1.32; }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .entry:nth-child(even) .entry-text { order: 1; }
+  .entry:nth-child(even) .entry-image { order: 2; }
+  .entry-title { font-size: 56px; }
+
+  .shopcard-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .callout-number { font-size: 64px; }
+}
 @media (max-width: 480px) {
-  .cc-card {
-    padding-top: max(40px, env(safe-area-inset-top, 0px));
-    padding-bottom: max(40px, env(safe-area-inset-bottom, 0px));
-    padding-left: max(14px, env(safe-area-inset-left, 0px));
-    padding-right: max(14px, env(safe-area-inset-right, 0px));
-    gap: 18px;
-  }
-  .cc-head { padding-left: 0; padding-right: 0; }
-  .cc-headline { font-size: clamp(26px, 8.2vw, 34px); }
-  .cc-brand { font-size: clamp(18px, 5.5vw, 22px); }
-  .cc-uploader {
-    --cc-up-x: 14px;
-    --cc-up-y-top: 16px;
-    --cc-up-y-bottom: 22px;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .cc-uploader-hero {
-    margin-bottom: 12px;
-    height: clamp(96px, min(40vw, 200px), 200px);
-  }
-  .cc-uploader-inner { gap: 10px; padding-bottom: 2px; }
-  .cc-uploader-title { font-size: clamp(20px, 6.2vw, 28px); line-height: 1.08; }
-  .cc-uploader-sub { max-width: none; font-size: 13.5px; margin-bottom: 10px; }
-  .cc-uploader-btn {
-    padding: 14px 18px;
-    min-height: 48px;
-    box-sizing: border-box;
-  }
-  .cc-link {
-    padding: 12px 12px;
-    gap: 10px;
-    grid-template-columns: 42px minmax(0, 1fr) auto auto;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .cc-link-icon {
-    width: 42px;
-    height: 42px;
-  }
-  .cc-link-icon svg { width: 18px; height: 18px; }
-  .cc-link-sub {
-    white-space: normal;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-  .cc-link-badge { flex-shrink: 0; align-self: center; }
-  .cc-theme-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 10px 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cc-theme-btn svg { width: 18px; height: 18px; display: block; }
-  .cc-toast {
-    bottom: max(16px, env(safe-area-inset-bottom, 0px) + 8px);
-    left: max(12px, env(safe-area-inset-left, 0px));
-    right: max(12px, env(safe-area-inset-right, 0px));
-    transform: none;
-    width: auto;
-    max-width: none;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.35;
-    padding: 12px 16px;
-  }
-  @keyframes cc-toast {
-    from { transform: translateY(8px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
-  }
-}
-@media (max-width: 380px) {
-  .cc-foot-hours li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-  .cc-foot-hours li span:last-child {
-    align-self: stretch;
-    text-align: left;
-  }
-}
-
-/* ── Focus rings ── */
-.cc-root button:focus-visible,
-.cc-root [role="button"]:focus-visible,
-.cc-root a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  body { font-size: 16px; }
+  .manifesto-text { font-size: 22px; }
+  .entry-title { font-size: 48px; }
+  .promise h2 { font-size: 32px; }
+  .quote-heading h2 { font-size: 42px; }
+  .housecall { font-size: 26px; }
+  .callout-number { font-size: 52px; }
 }
 </style>
 </head>
-<body class="theme-vault">
-<div id="root"></div>
+<body>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<!-- ══ OPENING — logo only, full viewport. The page opens quietly. ══ -->
+<section class="opening">
+  <img class="opening-logo" src="assets/n-mammon-logo.png" alt="N. Mammon" />
+  <span class="opening-scroll" aria-hidden="true">scroll</span>
+</section>
 
-<script type="text/babel">
-const { useState, useEffect } = React;
+<!-- ══ MANIFESTO — centered statement, no logo, no picture ══ -->
+<section class="manifesto">
+  <div class="frame">
+    <p class="manifesto-text">For decades, our family has helped clients sell valuables with confidence. We offer <em>honest appraisals</em>, <em>transparent pricing</em>, and <em>fast payment</em> for gold, silver, coins, antiques, and estate items.</p>
+  </div>
+</section>
 
-// ── N.Mammon contact info ──
-const PHONE_URL  = 'tel:+19177156245';
-const SMS_URL    = 'sms:+19177156245';
-const QUOTE_PREFILL = 'Hi, can you give me a quote for this?';
-const WA_URL     = 'https://wa.me/19177156245?text=' + encodeURIComponent(QUOTE_PREFILL);
-const MAPS_URL   = 'https://maps.google.com/?q=N.Mammon+Estate+Gold+and+Silver';
-const REVIEW_URL = 'https://www.google.com/maps/search/N+Mammon+Estate+Gold+%26+Silver+917-715-6245';
-const UPLOADER_HERO_IMG = 'assets/uploader-hero.png';
-/** Google Forms → Send → Link → paste the form URL here. Opens in a new tab (required if the form has file uploads; Google does not allow embedding those). */
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfzXIOP2N-worcD7jVCwh4DPPtOV-rqmwRwnaMV_sKJY5uF9Q/viewform';
+<!-- ══ PHONE CALLOUT — the big number ══ -->
+<section class="callout">
+  <div class="frame">
+    <p class="callout-eyebrow">Same-day cash offers. Seven days a week.</p>
+    <h2 class="callout-number"><a href="tel:+19177156245">(917) 715-6245</a></h2>
+    <p class="callout-sub">or send photos by <a href="https://wa.me/19177156245?text=Hi%2C%20can%20you%20give%20me%20a%20quote%20for%20this%3F" target="_blank" rel="noopener">WhatsApp</a> &nbsp;·&nbsp; <a href="sms:+19177156245">text message</a></p>
+  </div>
+</section>
 
-function googleFormOpenHref(raw) {
-  const s = String(raw || '').trim();
-  if (!s) return '';
-  try {
-    const u = new URL(s);
-    u.searchParams.delete('embedded');
-    return u.href;
-  } catch {
-    return s;
-  }
-}
+<!-- ══ THE CATALOG ══ -->
+<section class="catalog">
+  <div class="frame">
+    <div class="catalog-intro">
+      <h2>What we <i>buy.</i></h2>
+      <p>From a single sterling teaspoon to a vault of Krugerrands. If it has age, weight, or precious metal in it — bring it.</p>
+    </div>
 
-// ── Icons ──
-const ICONS = {
-  phone: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
-  text: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>,
-  whatsapp: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.7-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.2.2-1.4-.1-.2-.3-.3-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>,
-  map: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
-  star: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
-  starOutline: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
-  form: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>,
-  arrow: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
-  shield: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-  clock: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-  sun: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>,
-  moon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>,
-};
-
-// ── Quote (Google Form opens in new tab — embed not allowed with file uploads) ──
-function QuoteFormCard() {
-  const [open, setOpen] = useState(false);
-  const formHref = googleFormOpenHref(GOOGLE_FORM_URL);
-  const hasForm = Boolean(formHref);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
-    window.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [open]);
-
-  return (
-    <>
-      <div className="cc-uploader">
-        <div className="cc-uploader-glow" aria-hidden="true"></div>
-        <figure className="cc-uploader-hero">
-          <img
-            src={UPLOADER_HERO_IMG}
-            alt="Silver bullion, tea service, gold coins, and jewelry on marble"
-            width="1024"
-            height="819"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <div className="cc-uploader-inner">
-          <div className="cc-uploader-icon">{ICONS.form}</div>
-          <div className="cc-uploader-eyebrow">Get a quote</div>
-          <h3 className="cc-uploader-title">Tell us what you have.</h3>
-          <p className="cc-uploader-sub">Short form: your contact info and optional photos. Submit and we will reply by text or phone. No obligation.</p>
-          <div className="cc-uploader-cta">
-            <button type="button" className="cc-uploader-btn" onClick={() => setOpen(true)}>
-              {ICONS.form}
-              Get a quote now
-            </button>
-          </div>
-          <div className="cc-uploader-meta">
-            <span>{ICONS.shield} Honest &amp; professional</span>
-            <span>·</span>
-            <span>{ICONS.clock} Reply in &lt;1 hr, 7 days</span>
-          </div>
-        </div>
-      </div>
-
-      {open && (
-        <div
-          className="cc-gf-backdrop"
-          role="presentation"
-          onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
-        >
-          <div className="cc-gf-modal" role="dialog" aria-modal="true" aria-labelledby="cc-gf-title">
-            <div className="cc-gf-head">
-              <h2 id="cc-gf-title">Request a quote</h2>
-              <button type="button" className="cc-gf-close" onClick={() => setOpen(false)} aria-label="Close form">×</button>
-            </div>
-            <div className="cc-gf-body">
-              {hasForm ? (
-                <>
-                  <p>The quote form opens on Google in a new tab so you can add photos if you like. Close this when you are done.</p>
-                  <a
-                    className="cc-gf-open"
-                    href={formHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setOpen(false)}
-                  >
-                    {ICONS.arrow}
-                    Open quote form
-                  </a>
-                </>
-              ) : (
-                <div className="cc-gf-placeholder">
-                  <strong>Add your Google Form link</strong>
-                  <span>In this file, set <code>GOOGLE_FORM_URL</code> to the URL from Google Forms → Send → <strong>Link</strong> (not embed). If you only have the embed <code>src</code>, paste it here anyway; we strip <code>embedded=true</code> for you.</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-// ── Header ──
-function CardHeader() {
-  return (
-    <header className="cc-head">
-      <div className="cc-monogram" aria-hidden="true">
-        <img className="cc-monogram-logo" src="assets/n-mammon-logo.png" alt="N. Mammon Estate Gold and Silver" width="76" height="76" decoding="async" />
-      </div>
-      <p className="cc-brand">N. Mammon</p>
-      <h1 className="cc-headline">Estate <em>Gold &amp; Silver</em></h1>
-      <p className="cc-tagline">Honest · Professional · Local</p>
-      <div className="cc-rating">
-        <span className="cc-stars">{[0,1,2,3,4].map(i => <span key={i} className="cc-star">{ICONS.star}</span>)}</span>
-        <span className="cc-rating-num">5.0</span>
-        <span className="cc-rating-meta">· Google reviews</span>
-      </div>
-    </header>
-  );
-}
-
-// ── Link row (anchor for real navigation) ──
-function LinkRow({ icon, label, sub, accent, badge, href, onClick }) {
-  const handleClick = (e) => {
-    if (onClick) onClick(e);
-  };
-  return (
-    <a className="cc-link" href={href} onClick={handleClick} target={href && href.startsWith('http') ? '_blank' : undefined} rel={href && href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-      <span className="cc-link-icon" data-accent={accent}>{icon}</span>
-      <span className="cc-link-text">
-        <span className="cc-link-label">{label}</span>
-        {sub && <span className="cc-link-sub">{sub}</span>}
-      </span>
-      {badge && <span className="cc-link-badge">{badge}</span>}
-      <span className="cc-link-chev">{ICONS.arrow}</span>
-    </a>
-  );
-}
-
-// ── Footer ──
-function FootBlock({ theme, onThemeChange }) {
-  return (
-    <footer className="cc-foot">
-      <div className="cc-foot-hours">
-        <div className="cc-foot-hours-title">Shop hours</div>
-        <ul>
-          <li>
-            <span>Sunday</span>
-            <span>9:00 — 5:00 <span className="cc-foot-appt">(By appointment only)</span></span>
-          </li>
-          <li>
-            <span>Mon – Fri</span>
-            <span>8:00 — 6:00 <span className="cc-foot-appt">(By appointment only)</span></span>
-          </li>
+    <article class="entry">
+      <div class="entry-text">
+        <p class="entry-num"><span>No. i</span>—&nbsp;&nbsp;Precious Metal</p>
+        <h3 class="entry-title">Gold.</h3>
+        <p class="entry-body">Bullion bars, broken chains, single earrings without their pair, dental gold, karat-marked anything. <em>Paid by weight, against the day's spot price.</em></p>
+        <ul class="entry-list">
+          <li>10k · 14k · 18k · 22k · 24k</li>
+          <li>Bullion &amp; bars · all hallmarks</li>
+          <li>Scrap, dental, jewelry, hardware</li>
         </ul>
       </div>
-      <div className="cc-foot-fine">
-        <span className="cc-foot-fine-lead">N.Mammon Estate Gold &amp; Silver — Turn your unwanted items into cash today.</span>
-        <strong className="cc-foot-fine-house">We do house calls.</strong>
+      <figure class="entry-image">
+        <img src="assets/cat-gold.jpg" alt="A pile of mixed gold jewelry — chains, rings, bracelets" />
+        <figcaption>Mixed lot, weighed and assessed.</figcaption>
+      </figure>
+    </article>
+
+    <article class="entry">
+      <div class="entry-text">
+        <p class="entry-num"><span>No. ii</span>—&nbsp;&nbsp;The Quiet Metal</p>
+        <h3 class="entry-title">Silver.</h3>
+        <p class="entry-body">Sterling flatware, hollowware, tea services, candelabra, .999 bars. <em>Singles or full sets — Georgian, Victorian, mid-century, all of it.</em></p>
+        <ul class="entry-list">
+          <li>Sterling (.925) · Coin (.900) · Fine (.999)</li>
+          <li>Hallmarked British, American, Continental</li>
+          <li>Flatware, hollowware, presentation pieces</li>
+        </ul>
       </div>
-      <div className="cc-foot-theme">
-        <button className={`cc-theme-btn ${theme === 'vault' ? 'active' : ''}`} onClick={() => onThemeChange('vault')} title="Dark theme">
-          {ICONS.moon}
-        </button>
-        <button className={`cc-theme-btn ${theme === 'daylight' ? 'active' : ''}`} onClick={() => onThemeChange('daylight')} title="Light theme">
-          {ICONS.sun}
-        </button>
+      <figure class="entry-image">
+        <img src="assets/cat-silver.jpg" alt="A laid-out service of antique silver — teapot, plates, goblets, flatware" />
+        <figcaption>An estate service, laid out for inventory.</figcaption>
+      </figure>
+    </article>
+
+    <article class="entry">
+      <div class="entry-text">
+        <p class="entry-num"><span>No. iii</span>—&nbsp;&nbsp;Struck &amp; Pressed</p>
+        <h3 class="entry-title">Coins.</h3>
+        <p class="entry-body">U.S. and foreign, gold and silver. Krugerrands, Eagles, Maples, Sovereigns, Morgan and Peace dollars, pre-1965 silver coinage. <em>Numismatic premium paid where it exists; melt where it doesn't.</em></p>
+        <ul class="entry-list">
+          <li>Bullion coins · proof sets · graded slabs</li>
+          <li>Pre-1965 90% silver dimes, quarters, halves</li>
+          <li>World gold &amp; silver · estate collections</li>
+        </ul>
       </div>
-    </footer>
-  );
-}
+      <figure class="entry-image">
+        <img src="assets/cat-coins.jpg" alt="Krugerrand silver, gold, and platinum coins in protective cases" />
+        <figcaption>A Krugerrand anniversary set.</figcaption>
+      </figure>
+    </article>
 
-// ── Main App ──
-function App() {
-  const [theme, setTheme] = useState('vault');
-  const [toast, setToast] = useState(null);
-
-  useEffect(() => {
-    document.body.className = `theme-${theme}`;
-  }, [theme]);
-
-  const showToast = (msg) => {
-    setToast(msg);
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => setToast(null), 2400);
-  };
-
-  const links = [
-    { icon: ICONS.phone,       label: 'Call Now',               sub: '917-715-6245 · We pick up 7 days a week', accent: 'gold', href: PHONE_URL },
-    { icon: ICONS.text,        label: 'Text Us',                sub: 'Quick quote — reply usually under 10 min', accent: 'sky',  href: SMS_URL },
-    { icon: ICONS.whatsapp,    label: 'WhatsApp',               sub: 'Send photos &amp; chat live',              accent: 'leaf', href: WA_URL,  badge: 'Fastest' },
-    { icon: ICONS.map,         label: 'Find Us',                sub: 'Get directions to our location',           accent: 'rose', href: MAPS_URL },
-    { icon: ICONS.starOutline, label: 'Leave a Google Review',  sub: 'Your review means everything to us',       accent: 'gold', href: REVIEW_URL },
-  ];
-
-  return (
-    <div className={`cc-root cc-variant-${theme}`}>
-      <div className="cc-page">
-        <div className="cc-page-bg" aria-hidden="true">
-          <div className="cc-page-grain"></div>
-        </div>
-        <div className="cc-card">
-          <CardHeader />
-          <QuoteFormCard />
-          <div className="cc-links">
-            {links.map((l, i) => <LinkRow key={i} {...l} />)}
-          </div>
-          <FootBlock theme={theme} onThemeChange={setTheme} />
-        </div>
+    <article class="entry">
+      <div class="entry-text">
+        <p class="entry-num"><span>No. iv</span>—&nbsp;&nbsp;Pieces with a Past</p>
+        <h3 class="entry-title">Antiques.</h3>
+        <p class="entry-body">Pocket watches, antique silver, Judaica, decorative objects, hallmarked oddities, anything bearing the patina of a hundred years. <em>If you're not sure what it is — bring it; we'll tell you.</em></p>
+        <ul class="entry-list">
+          <li>Pocket &amp; wrist watches (running or not)</li>
+          <li>Judaica · religious silver · ceremonial</li>
+          <li>Decorative bronzes, brass, signed objects</li>
+        </ul>
       </div>
-      {toast && <div className="cc-toast" role="status">{toast}</div>}
+      <figure class="entry-image">
+        <img src="assets/cat-antiques.jpg" alt="Antique books, a globe, and a brass desk clock in a study" />
+        <figcaption>A library, awaiting appraisal.</figcaption>
+      </figure>
+    </article>
+  </div>
+</section>
+
+<!-- ══ PROMISE — Nathaniel & the family business since 1980 ══ -->
+<section class="promise">
+  <div class="frame">
+    <h2>A family business <i>since 1980.</i></h2>
+    <p>Nathaniel was raised in the trade. His family has been buying gold, silver, antiques, and unique valuables since 1980 — and the principles he learned from them haven't shifted: <em>integrity, transparency, and treating people right.</em></p>
+    <p>Spot-price transparency, weighed in front of you. Clear evaluations. Competitive pricing. Quick payments. Same-day cash, and house calls for the right pieces. <em>No pressure, no theatre, no guesswork.</em></p>
+    <p>A handshake business, made simple.</p>
+    <p class="signature">Nathaniel Mammon</p>
+  </div>
+</section>
+
+<!-- ══ QUOTE — inline form using FormSubmit. Submissions email straight to N. Mammon with photos attached. ══ -->
+<section class="quote" id="quote">
+  <div class="frame">
+    <div class="quote-heading">
+      <h2>Tell us what <i>you have.</i></h2>
+      <p>A few details and photos. We reply quickly, every day. No obligation, ever.</p>
     </div>
-  );
-}
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    <!-- IMPORTANT: replace the email below with N. Mammon's real address before deploying.
+         First submission triggers a one-time activation email from FormSubmit — N. Mammon clicks "Activate"
+         and from then on every submission lands directly in his inbox, with photos as attachments. -->
+    <form class="quote-form" action="https://formsubmit.co/antiquesdusty@gmail.com" method="POST" enctype="multipart/form-data">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New quote request — mammonsilver.com" />
+      <input type="hidden" name="_next" value="https://mammonsilver.com/?sent=1#quote" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="true" />
+      <!-- Spam honeypot — leave empty -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
+
+      <div class="form-row">
+        <label class="form-field">
+          <span class="form-label">Your name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label class="form-field">
+          <span class="form-label">Phone</span>
+          <input type="tel" name="phone" required autocomplete="tel" placeholder="(917) 555-0100" />
+        </label>
+      </div>
+
+      <label class="form-field">
+        <span class="form-label">Email <em>(optional)</em></span>
+        <input type="email" name="email" autocomplete="email" />
+      </label>
+
+      <label class="form-field">
+        <span class="form-label">What do you have?</span>
+        <textarea name="description" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
+      </label>
+
+      <div class="form-field form-files">
+        <span class="form-label">Photos <em>(optional · up to 10 MB total)</em></span>
+        <label class="file-btn" for="photos">
+          <span class="file-btn-text" id="fileBtnText">Attach photos →</span>
+          <span class="file-list" id="fileList"></span>
+        </label>
+        <input type="file" id="photos" name="attachment" multiple accept="image/*" style="display:none" />
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="form-cta">Send request →</button>
+        <span class="form-or">or call <a href="tel:+19177156245">(917) 715-6245</a></span>
+      </div>
+    </form>
+
+    <!-- Shown when FormSubmit redirects back with ?sent=1 -->
+    <div class="form-success" aria-live="polite">
+      <h3>Thank you.</h3>
+      <p>Your request has been sent. N. Mammon will get back to you shortly — usually within the hour, every day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHOPCARD — hours & reach us ══ -->
+<section class="shopcard" id="contact">
+  <div class="frame shopcard-grid">
+    <div>
+      <h3>How to <i>reach us.</i></h3>
+      <ul class="reach-list">
+        <li>
+          <span class="label">Telephone</span>
+          <span class="val"><a href="tel:+19177156245">(917) 715-6245</a></span>
+        </li>
+        <li>
+          <span class="label">Text</span>
+          <span class="val"><a href="sms:+19177156245">(917) 715-6245</a></span>
+        </li>
+        <li>
+          <span class="label">WhatsApp</span>
+          <span class="val"><a href="https://wa.me/19177156245?text=Hi%2C%20can%20you%20give%20me%20a%20quote%20for%20this%3F" target="_blank" rel="noopener">(917) 715-6245</a><span class="pill">fastest reply</span></span>
+        </li>
+        <li>
+          <span class="label">Directions</span>
+          <span class="val"><a href="https://maps.google.com/?q=N.Mammon+Estate+Gold+and+Silver" target="_blank" rel="noopener">on Google Maps →</a></span>
+        </li>
+        <li>
+          <span class="label">A kind word</span>
+          <span class="val"><a href="https://www.google.com/maps/search/N+Mammon+Estate+Gold+%26+Silver+917-715-6245" target="_blank" rel="noopener">leave a review →</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Shop <i>hours.</i></h3>
+      <ul class="hours-list">
+        <li>
+          <span class="day">Sunday</span>
+          <span><span class="time">9:00 — 5:00</span><span class="appt">by appointment</span></span>
+        </li>
+        <li>
+          <span class="day">Monday — Friday</span>
+          <span><span class="time">8:00 — 6:00</span><span class="appt">by appointment</span></span>
+        </li>
+        <li>
+          <span class="day">Saturday</span>
+          <span><span class="time">Closed</span></span>
+        </li>
+      </ul>
+      <p class="housecall">We do house calls.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="frame">
+    <p class="colophon"><strong>N. Mammon</strong> &nbsp;·&nbsp; Estate Gold &amp; Silver &nbsp;·&nbsp; New York</p>
+    <p class="copyright">© <span id="year"></span> &nbsp;·&nbsp; All rights reserved</p>
+  </div>
+</footer>
+
+<!-- Modal removed: the quote form is now inline above. -->
+
+<script>
+// ── Opening logo ↔ manifesto cross-fade on scroll ──
+// As the user scrolls past the opening, the logo fades out and the
+// manifesto text fades in. Tied directly to scroll position via rAF.
+(function() {
+  const logo      = document.querySelector('.opening-logo');
+  const scrollHint= document.querySelector('.opening-scroll');
+  const manifesto = document.querySelector('.manifesto-text');
+  if (!logo || !manifesto) return;
+
+  // Respect reduced motion: reveal manifesto immediately, no scroll-linked logic.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    manifesto.classList.add('in');
+    return;
+  }
+
+  let ticking = false;
+  function frame() {
+    const y  = window.scrollY;
+    const vh = window.innerHeight;
+
+    // Logo: full from 0 → 25vh, then fade out by 75vh
+    const logoFade = Math.max(0, 1 - Math.max(0, y - vh * 0.25) / (vh * 0.50));
+    logo.style.opacity = logoFade.toFixed(3);
+    logo.style.transform = 'scale(' + (0.96 + 0.04 * logoFade).toFixed(3) + ')';
+    if (scrollHint) scrollHint.style.opacity = logoFade.toFixed(3);
+
+    // Manifesto: cross-fade in from 35vh → 95vh
+    const inProgress = Math.min(1, Math.max(0, (y - vh * 0.35) / (vh * 0.60)));
+    if (inProgress > 0) manifesto.classList.add('in');
+    // Direct style for smooth scroll-linked motion (overrides the .in transition)
+    manifesto.style.opacity = inProgress.toFixed(3);
+    manifesto.style.transform = 'translateY(' + ((1 - inProgress) * 24).toFixed(2) + 'px)';
+
+    ticking = false;
+  }
+  function onScroll() {
+    if (!ticking) { requestAnimationFrame(frame); ticking = true; }
+  }
+
+  // Cancel the load-in animation on the logo (the JS now controls it).
+  logo.style.animation = 'none';
+  logo.style.opacity = '1';
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  frame(); // set initial state
+})();
+
+// ── File input: show attached count instead of the ugly default control ──
+(function() {
+  const input  = document.getElementById('photos');
+  const btnTxt = document.getElementById('fileBtnText');
+  const list   = document.getElementById('fileList');
+  if (!input) return;
+
+  input.addEventListener('change', () => {
+    const files = Array.from(input.files || []);
+    if (files.length === 0) {
+      btnTxt.textContent = 'Attach photos →';
+      list.textContent = '';
+      return;
+    }
+    btnTxt.textContent = files.length === 1
+      ? '1 photo attached  ·  change →'
+      : files.length + ' photos attached  ·  change →';
+    list.textContent = files.map(f => f.name).join(', ');
+
+    // Gentle warning if total payload exceeds FormSubmit's 10MB limit
+    const total = files.reduce((s, f) => s + f.size, 0);
+    if (total > 10 * 1024 * 1024) {
+      list.textContent += '  —  ⚠ over 10 MB total, please remove some';
+    }
+  });
+})();
+
+// ── If FormSubmit redirected us back with ?sent=1, show the thank-you state ──
+(function() {
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    document.body.classList.add('sent');
+    // Scroll the thank-you into view
+    setTimeout(() => {
+      const el = document.querySelector('.form-success');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  }
+})();
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
