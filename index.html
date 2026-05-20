@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
+<script src="https://forminit.com/sdk/v1/forminit.js" defer></script>
 <style>
 /* ─────────────────────────────────────────────
    N. Mammon — buyer of gold, silver, coins & antiques.
@@ -444,33 +445,6 @@ img { display: block; max-width: 100%; height: auto; }
   opacity: 0.7;
 }
 
-/* File upload — styled as a refined link, not a default button */
-.form-files {
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 6px;
-}
-.file-btn {
-  display: block;
-  cursor: pointer;
-  padding: 6px 0;
-}
-.file-btn-text {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-size: 19px;
-  color: var(--blood);
-  transition: opacity .3s;
-}
-.file-btn:hover .file-btn-text { opacity: 0.7; }
-.file-list {
-  display: block;
-  margin-top: 6px;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--ink-3);
-  word-break: break-all;
-}
-
 /* Submit */
 .form-submit {
   margin-top: 44px;
@@ -491,6 +465,7 @@ img { display: block; max-width: 100%; height: auto; }
   letter-spacing: 0;
 }
 .form-cta:hover { opacity: 0.7; }
+.form-cta:disabled { opacity: 0.45; cursor: default; }
 .form-or {
   display: block;
   margin-top: 22px;
@@ -504,15 +479,16 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .form-or a:hover { color: var(--blood); border-color: var(--blood); }
 
-/* Inline success state (triggered by ?sent=1 in URL) */
-.form-success {
+/* Inline success / error state */
+.form-result {
   display: none;
   text-align: center;
   padding: 32px 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
-body.sent .quote-form { display: none; }
-body.sent .form-success { display: block; }
-.form-success h3 {
+.form-result.visible { display: block; }
+.form-result h3 {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-weight: 400;
@@ -520,7 +496,7 @@ body.sent .form-success { display: block; }
   color: var(--blood);
   margin: 0 0 14px;
 }
-.form-success p {
+.form-result p {
   font-style: italic;
   color: var(--ink-2);
   font-size: 18px;
@@ -528,6 +504,7 @@ body.sent .form-success { display: block; }
   margin: 0 auto;
   line-height: 1.5;
 }
+.form-result.error p { color: #8a2828; }
 
 @media (max-width: 600px) {
   .form-row { grid-template-columns: 1fr; gap: 32px; }
@@ -860,7 +837,7 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
   </div>
 </section>
 
-<!-- ══ QUOTE — inline form using FormSubmit. Submissions email straight to N. Mammon with photos attached. ══ -->
+<!-- ══ QUOTE — embedded Forminit form ══ -->
 <section class="quote" id="quote">
   <div class="frame">
     <div class="quote-heading">
@@ -868,47 +845,33 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
       <p>A few details and photos. We reply quickly, every day. No obligation, ever.</p>
     </div>
 
-    <!-- IMPORTANT: replace the email below with N. Mammon's real address before deploying.
-         First submission triggers a one-time activation email from FormSubmit — N. Mammon clicks "Activate"
-         and from then on every submission lands directly in his inbox, with photos as attachments. -->
-    <form class="quote-form" action="https://formsubmit.co/antiquesdusty@gmail.com" method="POST" enctype="multipart/form-data">
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="New quote request — mammonsilver.com" />
-      <input type="hidden" name="_next" value="https://mammonsilver.com/?sent=1#quote" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="true" />
-      <!-- Spam honeypot — leave empty -->
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" />
-
+    <form class="quote-form" id="quote-form" novalidate>
       <div class="form-row">
         <label class="form-field">
-          <span class="form-label">Your name</span>
-          <input type="text" name="name" required autocomplete="name" />
+          <span class="form-label">First name</span>
+          <input type="text" name="fi-sender-firstName" required autocomplete="given-name" />
         </label>
+        <label class="form-field">
+          <span class="form-label">Last name</span>
+          <input type="text" name="fi-sender-lastName" required autocomplete="family-name" />
+        </label>
+      </div>
+
+      <div class="form-row">
         <label class="form-field">
           <span class="form-label">Phone</span>
           <input type="tel" name="phone" required autocomplete="tel" placeholder="(917) 555-0100" />
         </label>
+        <label class="form-field">
+          <span class="form-label">Email <em>(optional)</em></span>
+          <input type="email" name="fi-sender-email" autocomplete="email" />
+        </label>
       </div>
-
-      <label class="form-field">
-        <span class="form-label">Email <em>(optional)</em></span>
-        <input type="email" name="email" autocomplete="email" />
-      </label>
 
       <label class="form-field">
         <span class="form-label">What do you have?</span>
-        <textarea name="description" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
+        <textarea name="fi-text-message" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
       </label>
-
-      <div class="form-field form-files">
-        <span class="form-label">Photos <em>(optional · up to 10 MB total)</em></span>
-        <label class="file-btn" for="photos">
-          <span class="file-btn-text" id="fileBtnText">Attach photos →</span>
-          <span class="file-list" id="fileList"></span>
-        </label>
-        <input type="file" id="photos" name="attachment" multiple accept="image/*" style="display:none" />
-      </div>
 
       <div class="form-submit">
         <button type="submit" class="form-cta">Send request →</button>
@@ -916,11 +879,7 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
       </div>
     </form>
 
-    <!-- Shown when FormSubmit redirects back with ?sent=1 -->
-    <div class="form-success" aria-live="polite">
-      <h3>Thank you.</h3>
-      <p>Your request has been sent. N. Mammon will get back to you shortly — usually within the hour, every day.</p>
-    </div>
+    <div class="form-result" id="form-result" aria-live="polite"></div>
   </div>
 </section>
 
@@ -1034,46 +993,37 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
   frame(); // set initial state
 })();
 
-// ── File input: show attached count instead of the ugly default control ──
-(function() {
-  const input  = document.getElementById('photos');
-  const btnTxt = document.getElementById('fileBtnText');
-  const list   = document.getElementById('fileList');
-  if (!input) return;
-
-  input.addEventListener('change', () => {
-    const files = Array.from(input.files || []);
-    if (files.length === 0) {
-      btnTxt.textContent = 'Attach photos →';
-      list.textContent = '';
-      return;
-    }
-    btnTxt.textContent = files.length === 1
-      ? '1 photo attached  ·  change →'
-      : files.length + ' photos attached  ·  change →';
-    list.textContent = files.map(f => f.name).join(', ');
-
-    // Gentle warning if total payload exceeds FormSubmit's 10MB limit
-    const total = files.reduce((s, f) => s + f.size, 0);
-    if (total > 10 * 1024 * 1024) {
-      list.textContent += '  —  ⚠ over 10 MB total, please remove some';
-    }
-  });
-})();
-
-// ── If FormSubmit redirected us back with ?sent=1, show the thank-you state ──
-(function() {
-  if (new URLSearchParams(window.location.search).get('sent') === '1') {
-    document.body.classList.add('sent');
-    // Scroll the thank-you into view
-    setTimeout(() => {
-      const el = document.querySelector('.form-success');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
-  }
-})();
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── Forminit submission ──
+(function() {
+  const form   = document.getElementById('quote-form');
+  const result = document.getElementById('form-result');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-cta');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const forminit = new Forminit();
+    const { error } = await forminit.submit('oglsdvlreho', new FormData(form));
+
+    if (error) {
+      result.className = 'form-result error visible';
+      result.innerHTML = '<p>' + (error.message || 'Something went wrong — please call or text instead.') + '</p>';
+      btn.textContent = 'Send request →';
+      btn.disabled = false;
+      return;
+    }
+
+    form.style.display = 'none';
+    result.className = 'form-result visible';
+    result.innerHTML = '<h3>Thank you.</h3><p>Your request has been sent. N. Mammon will get back to you shortly — usually within the hour, every day.</p>';
+  });
+})();
 </script>
 </body>
 </html>
