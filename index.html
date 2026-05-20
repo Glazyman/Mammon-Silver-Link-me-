@@ -445,6 +445,34 @@ img { display: block; max-width: 100%; height: auto; }
   opacity: 0.7;
 }
 
+/* File upload */
+.form-files {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-bottom: 32px;
+}
+.file-btn {
+  display: block;
+  cursor: pointer;
+  padding: 6px 0;
+}
+.file-btn-text {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--blood);
+  transition: opacity .3s;
+}
+.file-btn:hover .file-btn-text { opacity: 0.7; }
+.file-list {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-3);
+  word-break: break-all;
+}
+
 /* Submit */
 .form-submit {
   margin-top: 44px;
@@ -873,6 +901,15 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
         <textarea name="fi-text-message" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
       </label>
 
+      <div class="form-files">
+        <span class="form-label">Photos <em>(optional)</em></span>
+        <label class="file-btn" for="photos">
+          <span class="file-btn-text" id="fileBtnText">Attach photos →</span>
+          <span class="file-list" id="fileList"></span>
+        </label>
+        <input type="file" id="photos" name="fi-file-photos[]" multiple accept="image/*" style="display:none" />
+      </div>
+
       <div class="form-submit">
         <button type="submit" class="form-cta">Send request →</button>
         <span class="form-or">or call <a href="tel:+19177156245">(917) 715-6245</a></span>
@@ -995,6 +1032,20 @@ footer .copyright { margin: 0; font-size: 12.5px; color: var(--ink-3); }
 
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── File input: show selected file names ──
+(function() {
+  const input  = document.getElementById('photos');
+  const btnTxt = document.getElementById('fileBtnText');
+  const list   = document.getElementById('fileList');
+  if (!input) return;
+  input.addEventListener('change', () => {
+    const files = Array.from(input.files || []);
+    if (!files.length) { btnTxt.textContent = 'Attach photos →'; list.textContent = ''; return; }
+    btnTxt.textContent = files.length === 1 ? '1 photo attached  ·  change →' : files.length + ' photos attached  ·  change →';
+    list.textContent = files.map(f => f.name).join(', ');
+  });
+})();
 
 // ── Forminit submission ──
 (function() {
