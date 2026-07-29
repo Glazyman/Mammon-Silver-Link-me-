@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" />
-<script src="https://forminit.com/sdk/v1/forminit.js" defer></script>
 <style>
 /* ─────────────────────────────────────────────
    MAMMON SILVER — Estate Silver & Gold.
@@ -673,7 +672,10 @@ img { display: block; max-width: 100%; height: auto; }
   padding-bottom: 6px;
   margin-bottom: 32px;
 }
+.file-slots { display: flex; flex-direction: column; gap: 2px; }
 .file-btn { display: block; cursor: pointer; padding: 6px 0; }
+.file-note { display: block; margin-top: 10px; font-size: 12px; font-style: italic; color: var(--silver-3); }
+.file-note.over { color: #d98a8a; }
 .file-btn-text {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -1082,49 +1084,77 @@ footer .copyright { margin: 0; font-size: 12px; color: var(--silver-3); }
   </div>
 </section>
 
-<!-- ══ QUOTE — embedded Forminit form ══ -->
+<!-- ══ QUOTE — embedded FormSubmit form ══ -->
 <section class="quote" id="quote">
   <div class="frame">
     <div class="quote-heading">
       <h2>Tell Us What <i>You Have</i></h2>
-      <p>A few details and photos. We reply quickly, every day. No obligation, ever.</p>
+      <p>A few details, photos, or files. We reply quickly, every day. No obligation, ever.</p>
     </div>
 
-    <form class="quote-form" id="quote-form" novalidate>
+    <form class="quote-form" id="quote-form"
+          action="https://formsubmit.co/Nmammonsilver@gmail.com"
+          method="POST" enctype="multipart/form-data">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New quote request — Mammon Silver" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://mammonsilver.com/?submitted=1#quote" />
+      <!-- Honeypot: bots fill this, humans never see it -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
       <div class="form-row">
         <label class="form-field">
           <span class="form-label">First name</span>
-          <input type="text" name="fi-sender-firstName" required autocomplete="given-name" />
+          <input type="text" name="First Name" required autocomplete="given-name" />
         </label>
         <label class="form-field">
           <span class="form-label">Last name</span>
-          <input type="text" name="fi-sender-lastName" required autocomplete="family-name" />
+          <input type="text" name="Last Name" required autocomplete="family-name" />
         </label>
       </div>
 
       <div class="form-row">
         <label class="form-field">
           <span class="form-label">Phone</span>
-          <input type="tel" name="phone" required autocomplete="tel" placeholder="(917) 555-0100" />
+          <input type="tel" name="Phone" required autocomplete="tel" placeholder="(917) 555-0100" />
         </label>
         <label class="form-field">
           <span class="form-label">Email <em>(optional)</em></span>
-          <input type="email" name="fi-sender-email" autocomplete="email" />
+          <input type="email" name="Email" autocomplete="email" />
         </label>
       </div>
 
       <label class="form-field">
         <span class="form-label">What do you have?</span>
-        <textarea name="fi-text-message" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
+        <textarea name="Message" rows="4" required placeholder="e.g. A silver tea service from my grandmother, a small bag of pre-1965 coins, a few gold rings…"></textarea>
       </label>
 
       <div class="form-files">
-        <span class="form-label">Photos <em>(optional)</em></span>
-        <label class="file-btn" for="photos">
-          <span class="file-btn-text" id="fileBtnText">Attach photos →</span>
-          <span class="file-list" id="fileList"></span>
-        </label>
-        <input type="file" id="photos" name="fi-file-photos[]" multiple accept="image/*" style="display:none" />
+        <span class="form-label">Photos or files <em>(optional · up to 10 MB total)</em></span>
+        <div class="file-slots">
+          <label class="file-btn">
+            <input type="file" name="attachment" class="file-input" style="display:none" />
+            <span class="file-btn-text">Attach a photo or file →</span>
+            <span class="file-list"></span>
+          </label>
+          <label class="file-btn">
+            <input type="file" name="attachment2" class="file-input" style="display:none" />
+            <span class="file-btn-text">Attach another →</span>
+            <span class="file-list"></span>
+          </label>
+          <label class="file-btn">
+            <input type="file" name="attachment3" class="file-input" style="display:none" />
+            <span class="file-btn-text">Attach another →</span>
+            <span class="file-list"></span>
+          </label>
+          <label class="file-btn">
+            <input type="file" name="attachment4" class="file-input" style="display:none" />
+            <span class="file-btn-text">Attach another →</span>
+            <span class="file-list"></span>
+          </label>
+        </div>
+        <span class="file-note" id="fileNote"></span>
       </div>
 
       <div class="form-submit">
@@ -1231,47 +1261,64 @@ footer .copyright { margin: 0; font-size: 12px; color: var(--silver-3); }
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ── File input: show selected file names ──
+// ── File inputs: per-slot names + combined 10 MB total check ──
 (function() {
-  const input  = document.getElementById('photos');
-  const btnTxt = document.getElementById('fileBtnText');
-  const list   = document.getElementById('fileList');
-  if (!input) return;
-  input.addEventListener('change', () => {
-    const files = Array.from(input.files || []);
-    if (!files.length) { btnTxt.textContent = 'Attach photos →'; list.textContent = ''; return; }
-    btnTxt.textContent = files.length === 1 ? '1 photo attached  ·  change →' : files.length + ' photos attached  ·  change →';
-    list.textContent = files.map(f => f.name).join(', ');
-  });
+  const form  = document.getElementById('quote-form');
+  const note  = document.getElementById('fileNote');
+  if (!form) return;
+  const inputs = Array.from(form.querySelectorAll('.file-input'));
+  const LIMIT = 10 * 1024 * 1024; // FormSubmit caps total attachments at 10 MB
+
+  function refresh() {
+    let total = 0;
+    inputs.forEach(input => {
+      const label  = input.closest('.file-btn');
+      const btnTxt = label.querySelector('.file-btn-text');
+      const list   = label.querySelector('.file-list');
+      const file   = input.files && input.files[0];
+      if (file) {
+        total += file.size;
+        btnTxt.textContent = 'Attached  ·  change →';
+        list.textContent = file.name;
+      } else {
+        btnTxt.textContent = input === inputs[0] ? 'Attach a photo or file →' : 'Attach another →';
+        list.textContent = '';
+      }
+    });
+    const btn = form.querySelector('.form-cta');
+    if (total > LIMIT) {
+      note.textContent = 'Total attachments are ' + (total / 1048576).toFixed(1) + ' MB — over the 10 MB limit. Please remove one, or send extras by text/WhatsApp.';
+      note.className = 'file-note over';
+      btn.disabled = true;
+    } else {
+      note.textContent = total ? (total / 1048576).toFixed(1) + ' MB of 10 MB used' : '';
+      note.className = 'file-note';
+      btn.disabled = false;
+    }
+  }
+  inputs.forEach(input => input.addEventListener('change', refresh));
 })();
 
-// ── Forminit submission ──
+// ── Submit: show "Sending…" then let the browser POST to FormSubmit ──
 (function() {
-  const form   = document.getElementById('quote-form');
-  const result = document.getElementById('form-result');
+  const form = document.getElementById('quote-form');
   if (!form) return;
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
+  form.addEventListener('submit', function() {
     const btn = form.querySelector('.form-cta');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-
-    const forminit = new Forminit();
-    const { error } = await forminit.submit('oglsdvlreho', new FormData(form));
-
-    if (error) {
-      result.className = 'form-result error visible';
-      result.innerHTML = '<p>' + (error.message || 'Something went wrong — please call or text instead.') + '</p>';
-      btn.textContent = 'Send request';
-      btn.disabled = false;
-      return;
-    }
-
-    form.style.display = 'none';
-    result.className = 'form-result visible';
-    result.innerHTML = '<h3>Thank you.</h3><p>Your request has been sent. Mammon Silver will get back to you shortly — usually within the hour, every day.</p>';
   });
+})();
+
+// ── Thank-you reveal after FormSubmit redirects back with ?submitted=1 ──
+(function() {
+  if (!/[?&]submitted=1\b/.test(window.location.search)) return;
+  const form   = document.getElementById('quote-form');
+  const result = document.getElementById('form-result');
+  if (!form || !result) return;
+  form.style.display = 'none';
+  result.className = 'form-result visible';
+  result.innerHTML = '<h3>Thank you.</h3><p>Your request has been sent. Mammon Silver will get back to you shortly — usually within the hour, every day.</p>';
 })();
 </script>
 </body>
